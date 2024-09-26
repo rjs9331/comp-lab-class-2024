@@ -1,0 +1,60 @@
+                      :-) GROMACS - gmx mdrun, 2020.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar      Christian Blau   Viacheslav Bolnykh     Kevin Boyd    
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra       Alan Gray     
+  Gerrit Groenhof     Anca Hamuraru    Vincent Hindriksen  M. Eric Irrgang  
+  Aleksei Iupinov   Christoph Junghans     Joe Jordan     Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul    Viveca Lindahl    Magnus Lundborg     Erik Marklund   
+    Pascal Merz     Pieter Meulenhoff    Teemu Murtola       Szilard Pall   
+    Sander Pronk      Roland Schulz      Michael Shirts    Alexey Shvetsov  
+   Alfons Sijbers     Peter Tieleman      Jon Vincent      Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf      Artem Zhmurov   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2020.4
+Executable:   /share/apps/gromacs/2020.4/openmpi/intel/bin/gmx_mpi
+Data prefix:  /share/apps/gromacs/2020.4/openmpi/intel
+Working dir:  /scratch/work/courses/CHEM-GA-2671-2024fa/students/rjs9331/comp-lab-class-2024
+Command line:
+  gmx_mpi mdrun -deffnm md_0_1
+
+
+Back Off! I just backed up md_0_1.log to ./#md_0_1.log.1#
+Reading file md_0_1.tpr, VERSION 2020.4 (single precision)
+Changing nstlist from 10 to 50, rlist from 1 to 1.117
+
+Using 1 MPI process
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Back Off! I just backed up md_0_1.xtc to ./#md_0_1.xtc.1#
+
+Back Off! I just backed up md_0_1.edr to ./#md_0_1.edr.1#
+starting mdrun 'TRP-CAGE in water'
+500000 steps,   1000.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     2650.821     2650.823      100.0
+                         44:10
+                 (ns/day)    (hour/ns)
+Performance:       32.594        0.736
+
+GROMACS reminds you: "Torture numbers, and they'll confess to anything." (Greg Easterbrook)
+

@@ -1,0 +1,1316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="Description" content="Water models" />
+<meta name="Keywords" content="water model,SPC,SPC/E,TIP3P,TIP4P,TIP5P, PPC,POL5,SSD,SWFLEX" />
+<meta name="author" content="martin chaplin: martin.chaplin@btinternet.com" />
+
+<title>Water models</title>
+<script language="javascript" type="text/javascript" src="head.js"></script>
+</head>
+<noscript>
+Your browser does not support JavaScript!
+</noscript>
+<head>
+<link rel="shortcut icon" href="/water/favicon.ico" type="image/x-icon" />
+<link rel="ToC" href="/water/water_structure_science.html" />
+<link rel="stylesheet" href="water.css" type="text/css" />
+
+</head>
+<body onload="mm_preloadImages('images/seab1.gif','images/seab3.gif','images/seab4.gif','images/top2.gif', 'images/top3.gif')">
+<a name="top" id="top"></a>
+<div style="width:761px; height:93px; background-color:#006868;padding-top:3px;border:0px;margin:0px;">
+  <div style="padding:0px;border:0px;margin:0px;padding-left:3px;width:140px; height:22px; background-color:#006868; float:left; display:inline;">
+    <form class="quicklinkform" action=" ">
+      <label for="&rdquo;menu1&rdquo;"></label>
+      <select class="quicklink"
+            onchange="mm_jumpMenu('parent',this,0)" name="menu1" id="&rdquo;menu1&rdquo;">
+       <option  value="index.html" selected="selected">Quick links</option>
+        <option value="index.html">......................................</option>
+        <option value="water_molecule.html">Water molecule</option>
+        <option value="water_hydrogen_bonding.html">hydrogen-bonding</option>
+        <option value="water_phase_diagram.html">Phase diagram</option>
+        <option value="water_vibrational_spectrum.html">Water spectrum</option>
+        <option value="water_dissociation.html">Dissociation</option>
+        <option value="water_anomalies.html">Anomalies</option>
+        <option value="water_properties.html">Water properties</option>
+        <option value="index.html">......................................</option>
+        <option value="clusters_overview.html">Water clusters</option>
+        <option value="protein_hydration.html">Protein hydration</option>
+        <option value="hydrocolloids_gums.html">Hydrocolloids</option>
+        <option value="ion_hydration.html">Ions</option>
+        <option value="index.html">......................................</option>
+        <option value="water_structure_science.html">Table of Contents</option>
+        <option value="water_sitemap.html">Site map</option>
+</select>
+</form>
+</div>
+  <div style="padding:0px;border:0px;margin:0px; height:22px; background-color:#006868; float:left; display:inline;"><a href="search.html" onmouseout="mm_swapImgRestore()" onmouseover="mm_swapImage('search','','images/seab1.gif',1)"><img src="images/sear1.gif" border="0" name="search" id="search"  width="72" height="22" title="Go to Search page" alt="Water site header" /></a><a href="water_sitemap.html"><img src="images/sear2.gif" width="432" height="22" title="Masthead Island, Great Barrier Reef: Go to Water Site map" alt="Masthead Island, Great Barrier Reef" border="0" /></a><img src="images/sean3.gif" alt=" " width="36" height="22" /><a href="/php-cgiwrap/water/pfp.php3?page=http://water.lsbu.ac.uk/water/water_models.html" onmouseout="mm_swapImgRestore()" onmouseover="mm_swapImage('printer','','images/seab4.gif',1)"  ><img src="images/sear4.gif" width="36" height="22"  title="Click here to print page" alt="Print-me key" name="printer"  border="0" id="printer" /></a><a href="add1.html"><img src="images/sear5.gif" width="39" height="22"  title="go to Water Visitor Book contributions"  alt="go to Water Visitor Book contributions" border="0"  /></a></div>
+  <map name="topmap" id="topmap">
+    <area shape="poly" coords="322,42,429,42,429,61,322,61" href="martin_chaplin.html" title="Go to my page" alt="Go to my page" onmouseout="mm_swapImgRestore()" onmouseover="mm_swapImage('topi','','images/top3.gif',1)"  />
+      <area shape="poly" coords="553,3,554,30,693,30,717,8,747,32,717,56,690,33,204,35,204,3" href="water_structure_science.html" title="Go to Water Structure and Science site contents" alt="Water Structure and Science" onmouseout="mm_swapImgRestore()" onmouseover="mm_swapImage('topi','','images/top2.gif',1)" />
+</map>
+  <div style="padding:0px;border:0px; margin-left:3px; width:755px; background-color:#006868;"><img src="images/top1.gif" width="755" height="68" name="topi" id="topi" usemap="#topmap" border="0" alt=" " /></div>
+</div>
+<div style="width:761px; background-color:#006868;padding:0px;border:0px;margin:0px;">
+  <div style="width:751px; background-image:url('images/bg.gif');margin-left:3px;padding-left:4px;border:0px;padding-top:0px;padding-bottom:0px; background-color:#FFFae2;">
+    <!-- print begin -->
+       <figure  class="floatright">
+<figcaption>
+      <p align="center">&nbsp;</p>
+      <p align="center">A computational model of a small periodic box </p>
+      <p align="center">containing 216 water molecules</p>
+      <p align="center">&nbsp;</p>
+</figcaption>
+<img src="images/periodic_box.gif" title="Computational model of a small periodic box containing 216 water molecules" alt="Computational model of a small periodic box containing 216 water molecules" width="320" height="296"  class="floatright" /></figure>
+    <h1>Water Models </h1>
+    <p>Water molecular models are computational techniques that have been developed  to help discover the structure 
+      of water.</p>
+    <p>&nbsp;</p>
+    <p class="style15"><img src="images/redown.gif" alt="V" width="13" height="12" border="0"/> <a href="#par" title="go to section below">Parameterization of the water models</a></p>
+    <p class="style15"><img src="images/redown.gif" alt="V" width="13" height="12" border="0"/> <a href="#back1" title="go to section below">Water model descriptions</a><br />
+      <img src="images/redown.gif" alt="V" width="13" height="12" border="0"/> <a href="#prop" title="go to section below">Water model properties</a><br />
+      <img src="images/redown.gif" alt="V" width="13" height="12" border="0"/> <a href="#solution" title="go to section below">Aqueous solutions</a></p>
+    <p class="style15"><strong><img src="images/redown.gif" alt="V" width="13" height="12" border="0"/> <a href="#af">The Lennard-Jones relationship</a></strong></p>
+    <p>&nbsp;</p>
+    <div class="style10">
+      <p align="center"><em>'with four parameters I can fit an elephant, </em></p>
+      <p align="center"><em>and with five I can make him wiggle his trunk'</em></p>
+</div>
+    <div  class="style4">
+      <p align="right"><strong>Enrico&nbsp;</strong> Fermi as stated in [<a title="go to cited reference"  href="ref25.html#r2438">2438</a><a name="r2438" id="r2438"></a>]&nbsp;&nbsp;&nbsp;</p>
+      <p align="right">&nbsp;</p>
+</div> 
+    <div class="style10">
+      <p align="center"><em>'although the model can be very accurate in many respects, </em></p>
+    <p align="center"><em>it should not be confused with the real liquid'</em></p>
+</div>  
+<div  class="style4">
+      <p align="right">Nilsson,  Schlesinger and Pettersson [<a title="go to cited reference"  href="ref26.html#r2569">2569</a><a name="r2569" id="r2569"></a>]&nbsp;&nbsp;&nbsp;</p>
+</div> 
+    <p>&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">For reviews of the development of water models, see [<a  href="ref3.html#r275" name="r275" title="go to cited reference" id="r275">275</a>,<a  href="ref26.html#r2537" name="r2537" title="go to cited reference" id="r2537">2537</a>], 
+      for a review of the development of analytical potential energy functions, see [<a  href="ref27.html#r2641" name="r2641" title="go to cited reference" id="r2641">2641</a>], for a review of their use in supercritical water see [<a title="go to cited reference"  href="ref5.html#r433">433</a><a name="r433" id="r433"></a>], for an appraisal of their accomplishments see [<a title="go to cited reference"  href="ref4.html#r400">400</a><a name="r400" id="r400"></a>], for a comparison of some important nonpolarizable models see  [<a title="go to cited reference"  href="ref15.html#r1478">1478</a><a name="r1478" id="r1478"></a>], for a review of progress in <em>ab initio</em> methods see   [<a title="go to cited reference"  href="ref17.html#r1611">1611</a><a name="r1611" id="r1611"></a>], and for a discussion of their use in biomolecular simulations see   [<a title="go to cited reference"  href="ref34.html#r3395">3395</a><a name="r3395" id="r3395"></a>]. It should be noted that most simulations using models can only investigate structural changes and interactions over very short timescales, generally less than  a few microseconds. Although computers have become more powerful, simulations often involve more complicated calculations with greater numbers of constituent molecules and exponentially growing interactions. Reliable experimental data are always to be preferred over results obtained by  simulation methods</p>
+    <h2><a name="par" id="par"></a>Water models parameterization</h2>
+    <p>Water  models are helpful given the basis that if the (known but hypothetical) model  (that is, computer water) can successfully predict the physical properties of  liquid water, then the (unknown) structure of liquid water is determined. There  is a trade-off between the computational complexity of the model and the system's  size and complexity that can be computed in a realistic period.  Even as computing power increases considerably year on year, the limits imposed by the system size, model complexity, and time restrictions are tested. Simple models can be used in  large systems (&gt;10,000 molecules) or for long simulation periods (&gt;10 ns). In contrast, complex but more accurate models (particularly <em>ab initio</em> methods) may only be used for relatively small systems (100-1000) and simulation times (&asymp;  ps). The small scale and short periods of such computations may lead to the, often ignored, possibility of artifacts. Generally, they cannot appreciate any real similar or larger (longer) scale events and should only be used to predict such events with great caution. At present, no water model can be used in simulations involving 100 nm cubes of water or for simulation periods of milliseconds or more. Despite  the tremendous investment in time and effort, extrapolated predictions from  molecular modeling should not be treated as equal to or superior to  experimental evidence.</p>
+    <p>&nbsp;</p>
+    <p align="left">Models involve orienting electrostatic effects 
+      and Lennard-Jones sites that may or may not coincide with 
+      one or more of the charged sites.<sup><a href="#ff" name="bff" id="bff">f</a></sup> The Lennard-Jones interaction 
+      accounts for the size of the molecules. It is repulsive at 
+      short distances,<sup><a href="#af" name="abb" id="abb">a</a></sup> ensuring that the structure does not completely 
+      collapse due to the electrostatic interactions. At intermediate 
+      distances, it is significantly attractive but non-directional and competes with the directional attractive electrostatic 
+      interactions. This competition ensures a tension between an 
+      expanded tetrahedral network and a collapsed non-directional 
+      one (for example, similar to that found in <a href="platonic.html#noble">liquid 
+      noble gases</a>). Generally, each model is developed to fit 
+      well with one particular physical structure, or parameter (for example, the <a href="density_anomalies.html#density">density anomaly</a>, <a title="go to 'Evidence for water clusters' page"  href="cluster_evidence.html#Fig1">radial 
+      distribution function</a> or the <a title="go to 'Water properties data' page"  href="water_properties.html#criticalpoint">critical 
+      parameters</a>). It comes as no surprise when a model developed 
+      to fit specific parameters gives good compliance with these 
+      same parameters (for example, see [<a title="go to cited reference"  href="ref10.html#r984">984</a><a name="r984" id="r984"></a>]). 
+      It is also the case that, despite the heavy computational investment in the calculations, the final agreement (or otherwise) with experimental data is often 'by eye' and not statistically tested or checked for parametric sensitivity. Also, tests for 'fit' often seem to be completed with publication in mind rather than rigor. Thus,  many papers use the radial distribution fit with diffraction data as their  'gold standard', despite the major fitted peaks (where the agreement looks so  impressive 'by eye') being derived from the tetrahedral nature of water that is  built into every model, and overpowering any disagreement in the fine detail. In particular, the O&middot;&middot;&middot;O 
+      radial distribution function masks any underlying complexity and seems to be a poor discriminator between widely differently performing models [<a title="go to cited reference" href="ref13.html#r1224">1224</a><a name="r1224" id="r1224"></a>, <a title="go to cited reference" href="ref37.html#r3671">3671</a><a name="r3671" id="r3671"></a>]. Indeed, current X-ray and neutron diffraction data cannot  distinguish  between  popular models  [<a title="go to cited reference" href="ref16.html#r1579">1579</a><a name="r1579" id="r1579"></a>, <a title="go to cited reference" href="ref17.html#r1624">1624</a><a name="r1624" id="r1624"></a>, <a title="go to cited reference" href="ref17.html#r1667">1667</a><a name="r1667" id="r1667"></a>, <a title="go to cited reference"  href="ref18.html#r1757">1757</a><a name="r1757" id="r1757"></a>, <a title="go to cited reference"  href="ref21.html#r2090">2090</a><a name="r2090" id="r2090"></a>]. Also, unfortunately, the purity, <a title="go to 'Water properties data' page"  href="water_properties.html#isotopic">isotopic mix,</a> and perhaps even the <em>ortho/para</em> spin state present in real water may cause 
+      difficulty over the choice of the value of the physical parameter 
+      [<a title="go to cited reference"  href="ref4.html#r400">400</a>], as models only use 
+      one isotopic form, and ignore the spin state and the presence of other entities, such as  ions. Also ignored, in all the models described here, is the ease of proton hopping between water molecules (&asymp; ps) and the positive effect that this must have on cluster stability and formation.</p>
+    <p>&nbsp;</p>
+    <p align="left">There is 
+      still disagreement over which value of some physical parameters 
+      to use such as for the dipole moment. Whether model 
+      results agree with other physical properties of water then 
+      acts as proof (or otherwise) of their utility. A 15-parameter model based on water monomer and dimer properties shows good agreement with the liquid-vapor coexistence line (clearly influenced by monomer-dimer properties), the critical point, and  the surface tension-temperature curve  [<a title="go to cited reference" href="ref24.html#r2334">2334</a><a name="r2334" id="r2334"></a>], but important dynamic properties remain to be determined [<a title="go to cited reference" href="ref24.html#r2333">2333</a><a name="r2333" id="r2333"></a>]. However, it does show surprisingly good agreement with the unrelated temperature of maximum density. By and large, 
+      the more fitting parameters  required by the model 
+      (and some require over 50), the better the fit. Some models 
+       lack robustness due to their sensitivity to the 
+      precise model parameters [<a  href="ref3.html#r206" name="r206" title="go to cited reference" id="r206">206</a>], 
+      the system size, or the calculation method [<a title="go to cited reference"  href="ref7.html#r619">619</a><a name="r619" id="r619"></a>, <a title="go to cited reference"  href="ref7.html#r649">649</a><a name="r649" id="r649"></a>]. A study 
+      of the sensitivity of water's behavior  to changes 
+      in the parameters using the <abbr title="Transferable Intermolecular Potential with 4 Points">TIP4P</abbr> model potential showed that <abbr title="Lennard-Jones distance">&sigma;</abbr>, 
+      followed by the O-H bond length, had significant effects on 
+      the density, enthalpy of vaporization and radial distribution 
+      function fits [<a title="go to cited reference"  href="ref5.html#r494">494</a><a name="r494" id="r494"></a>]. A separate sensitivity analysis showed that the thermodynamic properties of water models were most sensitive to the van der Waals repulsive, the short-range coulomb, and the polarization components of the potential [<a href="ref11.html#r1042">1042</a><a name="r1042" id="r1042"></a>]. Classical force field simulations have been shown to underestimate the anomalous fluctuations in water extending from very low to ambient temperatures [<a title="go to cited reference"  href="ref38.html#r3742">3742</a><a name="r3742" id="r3742"></a>]<br />
+    </p>
+    <p>&nbsp;</p>
+    <p align="left">It can be noted that a number of these models use water molecules 
+      with a wider (more tetrahedral) H-O-H angle and longer H-O bond 
+      length than <a title="go to 'Water molecular structure' page"  href="water_molecule.html#r2D">those expected</a> of gaseous or liquid water, and indicative of the importance 
+      of including parameters giving strong hydrogen-bonding  [<a href="ref24.html#r2339">2339</a><a name="r2339" id="r2339"></a>]. Water 
+      molecules in liquid water are all non-equivalent (differing 
+      in their molecular orbitals, their precise geometry, and molecular 
+      vibrations; for an extreme case, see the <a href="h4o2_orbitals.html">water 
+      dimer</a>) due to their hydrogen-bonding status, which is 
+      influenced by the arrangement of the surrounding water molecules. 
+      Some models are polarizable [<a title="go to cited reference"  href="ref9.html#r867">867</a><a name="r867" id="r867"></a>] 
+      to make some allowance for this,<sup><a href="#cf" name="cbb" id="cbb">c</a>,<a href="#df" name="dbb" id="dbb">d</a></sup>  whereas other simpler models try to reproduce 'average' structures. &nbsp;The Franzese-Stanley coarse grained model for hydration water predicts a phase transition between two liquids with different densities and energies in the supercooled water region, ending in a liquid-liquid critical point [<a title="go to cited reference"  href="ref40.html#r3979">3979</a><a name="r3979" id="r3979"></a>].</p>
+    <p align="right">[<a title="go to top of page" href="#top"><span class="style16">Back to Top&nbsp;</span><img src="images/rtup.gif" border="0" alt="to top of page" width="13" height="12" /></a>] <a name="back1" id="back1"></a></p>
+    <figure  class="floatright">
+<figcaption>
+      <p align="center">&nbsp;</p>
+      <p align="center">&nbsp;</p>
+      <p align="center">Water models</p>
+      <p align="center">&nbsp;</p>
+</figcaption>
+<img class="floatright" border="0" src="images/h2o_models.gif" title="Water models" alt="Water models" width="360" height="359" /></figure>
+    <h2>Water model descriptions</h2>
+    <p>&nbsp;</p>
+    <p>A review listed 46 
+      distinct models [<a title="go to cited reference"  href="ref4.html#r400">400</a>], so 
+      indirectly indicating their lack of success in quantitatively 
+      reproducing the properties of real water. They may, 
+      however, offer helpful insight into water's behavior. </p>
+    <p>&nbsp;</p>
+    <p>Some of the more successful simple models are opposite 
+      with their parameters given below. Model types <strong>a</strong>, <strong>b</strong>, and <strong>c</strong> are all planar, whereas type <strong>d</strong> is almost tetrahedral. The mid-point site (<sub>M</sub>) in <strong>c</strong>, and the lone pair sites (<sub>L</sub>) in <strong>d</strong> are labeled q<sub>2</sub></p>
+    <p>&nbsp;</p>
+    <p>Some  models are most helpful in understanding the water structure-property  relationships. Good examples are the simplified two- and three-dimensional  Mercedes-Benz (MB) water models, proposed initially in 1971. These interact  with other particles through Lennard-Jones interactions and  orientation-dependent hydrogen bonding interactions through three radial arms  arranged as in the MB logo    [<a href="ref44.html#r4400">4400</a><a name="r4400" id="r4400"></a>]. </p>
+    <div align="center" style=" float:none; clear:both;">
+      <table border="1" cellspacing="0" width="99%" cellpadding="0" summary="Parameters for some water molecular models">
+        <caption>
+        <strong class="style15"><br />
+        Parameters for some molecular water models</strong>
+        <br />
+        <br />
+        </caption>
+        <tr>
+          <th scope="col"  width="22%"><p align="center"><strong><a name="m" id="m"></a>Model</strong></p></th>
+          <th scope="col" align="center"  width="6%"><p align="center"><strong><a title="click for an explanation" href="#back1">Type</a></strong></p></th>
+          <th scope="col" align="center"  width="10%"><strong><abbr title="Lennard-Jones distance">&sigma;</abbr> <a href="constants.html#ang" title="Angstrom">&Aring;</a><sup> <a title="click for an explanation" href="#f">6</a></sup></strong></th>
+          <th scope="col" align="center"  width="13%"><strong><abbr title="Lennard-Jones energy">&epsilon;</abbr> kJ  &#739; mol<sup>&minus;1 <a title="click for an explanation" href="#f">6</a></sup></strong></th>
+          <th scope="col" align="center"  width="9%"><strong>l<sub>1</sub> <a href="constants.html#ang" title="Angstrom">&Aring;</a></strong></th>
+          <th scope="col" align="center"  width="9%"><strong>l<sub>2</sub> <a href="constants.html#ang" title="Angstrom">&Aring;</a></strong></th>
+          <th scope="col" align="center"  width="9%"><strong>q<sub>1</sub> (e)</strong></th>
+          <th scope="col" align="center"  width="9%"><strong>q<sub>2</sub> (e)</strong></th>
+          <th scope="col" align="center"  width="7%"><strong>&theta;&deg;</strong></th>
+          <th scope="col" align="center"  width="7%"><strong>&phi;&deg;</strong></th>
+</tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><abbr title="Soft sticky dipole">&nbsp;SSD</abbr> <sup>[<a title="go to cited reference"  href="ref6.html#r511">511</a><a name="r511" id="r511"></a>]</sup> </div></th>
+          <td align="center"  width="6%"><strong>-</strong><sup><a title="click for an explanation" href="#h">8</a></sup></td>
+          <td align="center"  width="10%">3.016</td>
+          <td align="center"  width="13%">15.319</td>
+          <td align="center"  width="9%">-</td>
+          <td align="center"  width="9%">-</td>
+          <td align="center"  width="9%">-</td>
+          <td align="center"  width="9%">-</td>
+          <td align="center"  width="7%">109.47</td>
+          <td align="center"  width="7%">109.47</td>
+</tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><abbr title="Simple Point Charge">&nbsp;SPC </abbr><a  href="ref.html#r94" name="r94" title="go to cited reference" id="r94"><sup>[94]</sup></a></div></th>
+          <td align="center"  width="6%"><a title="click for an explanation" href="#back1"><strong>a</strong></a></td>
+          <td align="center"  width="10%">3.166</td>
+          <td align="center"  width="13%">0.650</td>
+          <td align="center"  width="9%">1.0000</td>
+          <td align="center"  width="9%">-</td>
+          <td align="center"  width="9%">+0.410</td>
+          <td align="center"  width="9%">-0.8200</td>
+          <td align="center"  width="7%">109.47</td>
+          <td align="center"  width="7%">-</td>
+</tr>
+        <tr>
+          <th scope="row" width="22%" height="20"><div align="left"><abbr title="Extended Simple Point Charge">&nbsp;SPC/E </abbr><a  href="ref.html#r3" name="r3" title="go to cited reference" id="r3"><sup>[3]</sup></a></div></th>
+          <td align="center"  width="6%" height="20"><a title="click for an explanation" href="#back1"><strong>a</strong></a></td>
+          <td align="center"  width="10%" height="20">3.166</td>
+          <td align="center"  width="13%" height="20">0.650</td>
+          <td align="center"  width="9%" height="20">1.0000</td>
+          <td align="center"  width="9%" height="20">-</td>
+          <td align="center"  width="9%" height="20">+0.4238</td>
+          <td align="center"  width="9%" height="20">-0.8476</td>
+          <td align="center"  width="7%" height="20">109.47</td>
+          <td align="center"  width="7%" height="20">-</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Simple Point Charge for Heavy Water">&nbsp;SPC/HW</abbr> (D<sub>2</sub>O) <a  href="ref3.html#r220" name="r220" title="go to cited reference" id="r220"><sup>[220]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>a</strong></a></td>
+          <td align="center">3.166</td>
+          <td align="center">0.650</td>
+          <td align="center">1.0000</td>
+          <td align="center">-</td>
+          <td align="center">+0.4350</td>
+          <td align="center">-0.8700</td>
+          <td align="center">109.47</td>
+          <td align="center">-</td>
+</tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><abbr title="Flexible Simple Point Charge">&nbsp;SPC/Fw </abbr><sup><a title="click for an explanation" href="#b">2</a> <a title="go to cited reference"  href="ref10.html#r994">[994]</a><a name="r994" id="r994"></a></sup></div></th>
+          <td align="center"  width="6%"><a title="click for an explanation" href="#back1"><strong>a</strong></a></td>
+          <td align="center"  width="10%">3.166</td>
+          <td align="center"  width="13%">0.650</td>
+          <td align="center"  width="9%">1.0120</td>
+          <td align="center"  width="9%">-</td>
+          <td align="center"  width="9%">+0.410</td>
+          <td align="center"  width="9%">-0.8200</td>
+          <td align="center"  width="7%">113.24</td>
+          <td align="center"  width="7%">-</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Transferable Intermolecular Potential with 3 Points">&nbsp;TIP3P</abbr> <a  href="ref2.html#r180" name="r180" title="go to cited reference" id="r180"><sup>[180]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>a</strong></a></td>
+          <td align="center">3.15061</td>
+          <td align="center">0.6364</td>
+          <td align="center">0.9572</td>
+          <td align="center">-</td>
+          <td align="center">+0.4170</td>
+          <td align="center">-0.8340</td>
+          <td align="center">104.52</td>
+          <td align="center">-</td>
+</tr>
+        <tr>
+          <th scope="row"><div align="left"><abbr title="Flexible Transferable Intermolecular Potential with 3 Points">&nbsp;TIP3P/Fw</abbr><sup><a title="click for an explanation" href="#b">2</a> <a title="go to cited reference"  href="ref10.html#r994">[994]</a></sup></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>a</strong></a></td>
+          <td align="center">3.1506</td>
+          <td align="center">0.6368</td>
+          <td align="center">0.9600</td>
+          <td align="center">-</td>
+          <td align="center">+0.4170</td>
+          <td align="center">-0.8340</td>
+          <td align="center">104.5</td>
+          <td align="center">-</td>
+</tr>
+        <tr>
+          <th scope="row"><div align="left"><abbr title="inexpensive Atomic
+Multipole Optimized Energetics for Biomolecular Applications)">&nbsp;iAMOEBA</abbr><sup><a title="click for an explanation" href="#b">2</a> <a title="go to cited reference"  href="ref21.html#r2031">[2031]</a><a name="r2031" id="r6"></a></sup></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>a</strong></a></td>
+          <td align="center">3.6453</td>
+          <td align="center">0.8235</td>
+          <td align="center">0.9584</td>
+          <td align="center">-</td>
+          <td align="center">+0.29701</td>
+          <td align="center">-0.59402</td>
+          <td align="center">106.48</td>
+          <td align="center">-</td>
+</tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><abbr title="inexpensive Atomic
+Multipole Optimized Energetics for Biomolecular Applications)">&nbsp;uAMOEBA</abbr><sup><a title="click for an explanation" href="#b">2</a> <a title="go to cited reference"  href="ref25.html#r2401">[2401]</a><a name="r2401" id="r2401"></a></sup></div></th>
+          <td align="center"  width="6%"><a title="click for an explanation" href="#back1"><strong>a</strong></a><sup><a title="click for an explanation" href="#aa">19</a></sup></td>
+          <td align="center">3.7553</td>
+          <td align="center">0.5945</td>
+          <td align="center"  width="9%">0.9499</td>
+          <td align="center"  width="9%">-</td>
+          <td align="center"  width="9%">-</td>
+          <td align="center"  width="9%"><sup><a title="click for an explanation" href="#aa">19</a></sup></td>
+          <td align="center"  width="7%">105.95</td>
+          <td align="center"  width="7%">-</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Quantum Chemical Topology"> &nbsp;QCT<a name="r1251" id="r5"></a></abbr><a title="go to cited reference"  href="ref13.html#r1251"><sup>[1251]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>a</strong></a><sup><a title="click for an explanation" href="#w">15</a></sup></td>
+          <td align="center">3.140</td>
+          <td align="center">0.753</td>
+          <td align="center">0.9614</td>
+          <td align="center">-</td>
+          <td align="center">+0.6064</td>
+          <td align="center">-1.2128</td>
+          <td align="center">104.067</td>
+          <td align="center">-</td>
+</tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><abbr title="Polarizable Point Charge">&nbsp;PPC </abbr><sup><a title="click for an explanation" href="#a">1</a>, <a title="click for an explanation" href="#b">2</a></sup> <a title="go to cited reference"  href="ref.html#r3"><sup>[3]</sup></a></div></th>
+          <td align="center"  width="6%"><a title="click for an explanation" href="#back1"><strong>b</strong></a></td>
+          <td align="center"  width="10%">3.23400</td>
+          <td align="center"  width="13%">0.6000</td>
+          <td align="center"  width="9%">0.9430</td>
+          <td align="center"  width="9%">0.06</td>
+          <td align="center"  width="9%">+0.5170</td>
+          <td align="center"  width="9%">-1.0340</td>
+          <td align="center"  width="7%">106.00</td>
+          <td align="center"  width="7%">127.00</td>
+</tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points">&nbsp;TIP4P</abbr> <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></div></th>
+          <td align="center"  width="6%"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center"  width="10%">3.15365</td>
+          <td align="center"  width="13%">0.6480</td>
+          <td align="center"  width="9%">0.9572</td>
+          <td align="center"  width="9%">0.15</td>
+          <td align="center"  width="9%">+0.5200</td>
+          <td align="center"  width="9%">-1.0400</td>
+          <td align="center"  width="7%">104.52</td>
+          <td align="center"  width="7%">52.26</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points for use with Ewald techniques">&nbsp;TIP4P-Ew</abbr> <a title="go to cited reference"  href="ref7.html#r649"><sup>[649]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center">3.16435</td>
+          <td align="center">0.680946</td>
+          <td align="center">0.9572</td>
+          <td align="center">0.125</td>
+          <td align="center">+0.52422</td>
+          <td align="center"><span class="style3">-1.04844</span></td>
+          <td align="center">104.52</td>
+          <td align="center">52.26</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points and Fluctuating charge">&nbsp;TIP4P-FQ</abbr> <a  href="ref2.html#r197" name="r197" title="go to cited reference" id="r197"><sup>[197]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center">3.15365</td>
+          <td align="center">0.6480</td>
+          <td align="center">0.9572</td>
+          <td align="center">0.15</td>
+          <td align="center">+0.63<a title="click for an explanation" href="#a"><sup>1</sup></a></td>
+          <td align="center">-1.26<a title="click for an explanation" href="#a"><sup>1</sup></a></td>
+          <td align="center">104.52</td>
+          <td align="center">52.26</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points for Ice">&nbsp;TIP4P/Ice</abbr> <sup>[<a title="go to cited reference"  href="ref9.html#r838">838</a><a name="r838" id="r838"></a>]</sup></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center">3.1668</td>
+          <td align="center">0.8822</td>
+          <td align="center">0.9572</td>
+          <td align="center">0.1577</td>
+          <td align="center">+0.5897</td>
+          <td align="center">-1.1794</td>
+          <td align="center">104.52</td>
+          <td align="center">52.26</td>
+</tr>
+        <tr>
+          <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points developed in 2005">&nbsp;TIP4P/2005</abbr> <sup>[<a title="go to cited reference"  href="ref10.html#r984">984</a>]</sup></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center">3.1589</td>
+          <td align="center">0.7749</td>
+          <td align="center">0.9572</td>
+          <td align="center">0.1546</td>
+          <td align="center">+0.5564</td>
+          <td align="center">-1.1128</td>
+          <td align="center">104.52</td>
+          <td align="center">52.26</td>
+</tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><abbr title="Flexible version of the Transferable Intermolecular Potential with 4 Points developed in 2005">&nbsp;TIP4P/2005f</abbr> <sup>[<a title="go to cited reference"  href="ref18.html#r1765">1765</a><a name="r1765" id="r1765"></a>]</sup></div></th>
+          <td align="center"  width="6%"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center"  width="10%">3.1644</td>
+          <td align="center"  width="13%">0.7749</td>
+          <td align="center"  width="9%">0.9572</td>
+          <td align="center"  width="9%">0.1546</td>
+          <td align="center"  width="9%">+0.5564</td>
+          <td align="center"  width="9%">-1.1128</td>
+          <td align="center"  width="7%">104.52</td>
+          <td align="center"  width="7%">52.26</td>
+</tr>
+        <tr>
+          <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points developed with dielectric">&nbsp;TIP4P/&epsilon;</abbr> <sup>[<a title="go to cited reference"  href="ref25.html#r2444">2444</a><a name="r2444" id="r2444"></a>]</sup></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center">3.165</td>
+          <td align="center">0.7732</td>
+          <td align="center">0.9572</td>
+          <td align="center">0.105</td>
+          <td align="center">+0.5270</td>
+          <td align="center">-1.054</td>
+          <td align="center">104.52</td>
+          <td align="center">52.26</td>
+        </tr>
+        <tr>
+          <th scope="row"><div align="left"><abbr title="Optimized point charge">&nbsp;OPC</abbr> <sup>[<a title="go to cited reference"  href="ref22.html#r2168">2168</a><a name="r2168" id="r8"></a>]</sup></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center">3.1666</td>
+          <td align="center">0.8903</td>
+          <td align="center">0.8724</td>
+          <td align="center">0.1594</td>
+          <td align="center">+0.6791</td>
+          <td align="center">-1.3582</td>
+          <td align="center">103.6</td>
+          <td align="center">51.8</td>
+</tr>
+        <tr>
+          <th scope="row"><div align="left"><abbr title="Optimized point charge, 3-points">&nbsp;OPC3</abbr> <sup>[<a title="go to cited reference"  href="ref28.html#r2722">2722</a><a name="r2722" id="r2722"></a>]</sup></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>a</strong></a></td>
+          <td align="center">3.17427</td>
+          <td align="center">0.68369</td>
+          <td align="center">0.9789</td>
+          <td align="center">-</td>
+          <td align="center">+0.4476</td>
+          <td align="center">-0.8952</td>
+          <td align="center">109.47</td>
+          <td align="center">-</td>
+</tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><abbr title="Shell Water, Flexible with Anisotropic polarizability">&nbsp;SWFLEX-AI </abbr><sup><a title="click for an explanation" href="#b">2</a></sup> <a  href="ref3.html#r201" name="r201" title="go to cited reference" id="r201"><sup>[201]</sup></a></div></th>
+          <td align="center"  width="6%"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center" colspan="2">four terms used</td>
+          <td align="center"  width="9%">0.968<a title="click for an explanation" href="#a"><sup>1</sup></a></td>
+          <td align="center"  width="9%">0.14<a title="click for an explanation" href="#a"><sup>1</sup></a><sup>,<a title="click for an explanation" href="#c">3</a></sup></td>
+          <td align="center"  width="9%">+0.6213</td>
+          <td align="center"  width="9%">-1.2459</td>
+          <td align="center"  width="7%">102.7<a title="click for an explanation" href="#a"><sup>1</sup></a></td>
+          <td align="center"  width="7%">51.35<a title="click for an explanation" href="#a"><sup>1</sup></a></td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Charge-On-Spring, Gas-phase values">&nbsp;COS/G3</abbr> <a  href="ref8.html#r704" name="r704" title="go to cited reference" id="r4"><sup>[704]</sup></a> <sup><a title="click for an explanation" href="#q">9</a></sup></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center">3.17459</td>
+          <td align="center">0.9445</td>
+          <td align="center">1.0000</td>
+          <td align="center">0.15</td>
+          <td align="center">+0.450672</td>
+          <td align="center"><span class="style3">-0.901344</span></td>
+          <td align="center">109.47</td>
+          <td align="center">-</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Charge-On-Spring, Gas-phase values">&nbsp;COS/D2</abbr> <a  href="ref17.html#r1617" name="r1617" title="go to cited reference" id="r1617"><sup>[1617]</sup></a> <sup><a title="click for an explanation" href="#q">9</a></sup> <sup><a title="click for an explanation" href="#x">16</a></sup> </div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center"><sup><a title="click for an explanation" href="#z">18</a></sup></td>
+          <td align="center"><sup><a title="click for an explanation" href="#z">18</a></sup></td>
+          <td align="center">0.9572</td>
+          <td align="center">0.2472</td>
+          <td align="center">+0.57</td>
+          <td align="center">-1.14</td>
+          <td align="center">104.52</td>
+          <td align="center">-</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Gaussian Charge Polarizable Model">&nbsp;GCPM</abbr><sup><a title="click for an explanation" href="#b">2</a></sup> <a  href="ref9.html#r859" name="r859" title="go to cited reference" id="r859"><sup>[859]</sup></a> <sup><a title="click for an explanation" href="#r">10</a></sup> </div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center">3.69 <sup><a title="click for an explanation" href="#d">4</a>,<a title="click for an explanation" href="#s">11</a></sup></td>
+          <td align="center">0.9146 <sup><a title="click for an explanation" href="#d">4</a></sup></td>
+          <td align="center">0.9572</td>
+          <td align="center">0.27</td>
+          <td align="center">+0.6113</td>
+          <td align="center">-1.2226</td>
+          <td align="center">104.52</td>
+          <td align="center">52.26</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Simple Water Model with four sites and a Negative charge on the Drude particle and Polarizability">&nbsp;SWM4-NDP</abbr><sup><a title="click for an explanation" href="#b">2</a></sup> <sup><a title="click for an explanation" href="#u">13</a></sup><a  href="ref10.html#r933" name="r933" title="go to cited reference" id="r933"><sup> [933]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center">3.18395</td>
+          <td align="center">0.88257</td>
+          <td align="center">0.9572</td>
+          <td align="center">0.24034</td>
+          <td align="center">0.55733</td>
+          <td align="center"><span class="style3">-1.11466</span></td>
+          <td align="center">104.52</td>
+          <td align="center">52.26</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left">&nbsp;<abbr title="Baranyai Kiss">BK3<sup><a title="click for an explanation" href="#b">2</a></sup><a name="r2080" id="r2080"></a></abbr><a title="go to cited reference"  href="ref21.html#r2080"><sup>[2080]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td align="center"><sup><a title="click for an explanation" href="#y">17</a></sup></td>
+          <td align="center"><sup><a title="click for an explanation" href="#y">17</a></sup></td>
+          <td align="center">0.975</td>
+          <td align="center">0.2661</td>
+          <td align="center">+0.584 <a href="constants.html#esu">esu</a></td>
+          <td align="center">-1.168 <a href="constants.html#esu">esu</a></td>
+          <td align="center">104.52</td>
+          <td align="center">-</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Simple Water Model with Six sites"> </abbr><abbr title="Stillinger model 2">&nbsp;</abbr><abbr title="Simple Water Model with Six sites">SWM6</abbr><sup><a title="click for an explanation" href="#b">2</a></sup> <sup><a title="click for an explanation" href="#u">13</a></sup><a  href="ref20.html#r1999" name="r1999" title="go to cited reference" id="r1999"><sup> [1999]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c/d</strong></a><sup><a title="click for an explanation" href="#g">7</a></sup></td>
+          <td align="center">3.19833</td>
+          <td align="center">0.67781</td>
+          <td align="center">0.9572</td>
+          <td align="center"><p>0.247<sub>M</sub></p>
+            <p>0.315<sub>L</sub></p></td>
+          <td align="center">+0.53070</td>
+          <td align="center"><p class="style3">-1.1334<sub>M</sub></p>
+            <p class="style3">-0.1080<sub>L</sub></p></td>
+          <td align="center">104.52</td>
+          <td align="center"><p>101.098</p>
+            <p>&nbsp;</p></td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Stillinger model 2">&nbsp;ST2</abbr> <a title="go to cited reference"  href="ref9.html#r872"><sup>[872</sup></a><a name="r872" id="r872"></a><a title="go to cited reference"  href="ref9.html#r872"><sup>]</sup></a> <sup><a title="click for an explanation" href="#t">12</a></sup> </div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>d</strong></a></td>
+          <td align="center">3.10000</td>
+          <td align="center">0.31694</td>
+          <td align="center">1.0000</td>
+          <td align="center">0.80</td>
+          <td align="center">+0.24357</td>
+          <td align="center"><span class="style3">-0.24357</span></td>
+          <td align="center">109.47</td>
+          <td align="center">109.47</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Transferable Intermolecular Potential with 5 Points">&nbsp;TIP5P</abbr> <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>d</strong></a></td>
+          <td align="center">3.12000</td>
+          <td align="center">0.6694</td>
+          <td align="center">0.9572</td>
+          <td align="center">0.70</td>
+          <td align="center">+0.2410</td>
+          <td align="center">-0.2410</td>
+          <td align="center">104.52</td>
+          <td align="center">109.47</td>
+</tr>
+        <tr>
+          <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 5 Points for use with Ewald techniques">&nbsp;TIP5P-Ew</abbr> <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref7.html#r619"><sup>619</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>d</strong></a></td>
+          <td align="center">3.097</td>
+          <td align="center">0.7448</td>
+          <td align="center">0.9572</td>
+          <td align="center">0.70</td>
+          <td align="center">+0.2410</td>
+          <td align="center">-0.2410</td>
+          <td align="center">104.52</td>
+          <td align="center">109.47</td>
+      </tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><abbr title="Transferable Intermolecular Potential with 5 Points for use with Ewald techniques">&nbsp;TIP5P-2018</abbr> <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref35.html#r3480"><sup>3480</sup></a><a name="r3480" id="r3480"></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></div></th>
+          <td align="center"  width="6%"><a title="click for an explanation" href="#back1"><strong>d</strong></a></td>
+          <td align="center"  width="10%">3.145</td>
+          <td align="center"  width="13%">0.79</td>
+          <td align="center"  width="9%">0.9572</td>
+          <td align="center"  width="9%">0.70</td>
+          <td align="center"  width="9%">+0.394137</td>
+          <td align="center"  width="9%"><p>-0.07358</p>
+          <p>q<sub>O</sub>
+           </p>
+          <p>-0.641114</p></td>
+          <td align="center"  width="7%">104.52</td>
+          <td align="center"  width="7%">109.47</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Transferable Intermolecular Potential with 5 Points">&nbsp;TIP7P</abbr> <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref37.html#r3644"><sup>3644</sup></a><a name="r3644" id="r3644"></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>d </strong></a><sup><a title="click for an explanation" href="#ab">20</a></sup></td>
+          <td align="center">3.156</td>
+          <td align="center">0.6284</td>
+          <td align="center">0.9572</td>
+          <td align="center">0.41</td>
+          <td align="center">+0.58014</td>
+          <td align="center">-0.17724</td>
+          <td align="center">104.52</td>
+          <td align="center">109.47</td>
+        </tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Thole-Type Model polarizable and Flexible"> &nbsp;TTM2-F</abbr> <sup>[<a name="r1027" id="r1027"></a><a title="go to cited reference"  href="ref11.html#r1027">1027]</a></sup><sup><a title="click for an explanation" href="#v"> 14</a></sup></div></th>
+          <td align="center"><a title="click for an explanation" href="#back1"><strong>c</strong></a></td>
+          <td colspan="2" align="center">five parameters used</td>
+          <td align="center">0.9572</td>
+          <td align="center">0.70</td>
+          <td align="center">+0.574</td>
+          <td align="center">-1.148</td>
+          <td align="center">104.52</td>
+          <td align="center">52.26</td>
+</tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><abbr title="Polarizable five-site, fitted using the aug-cc-pVTZ basis set"> &nbsp;POL5/TZ </abbr><sup><a title="click for an explanation" href="#b">2</a></sup> <sup><a  href="ref3.html#r256" name="r256" title="go to cited reference" id="r256">[256]</a></sup></div></th>
+          <td align="center"  width="6%"><a title="click for an explanation" href="#back1"><strong>d</strong></a></td>
+          <td align="center"  width="10%">2.9837<sup><a title="click for an explanation" href="#d"> 4</a></sup></td>
+          <td align="center"  width="13%"><a title="click for an explanation" href="#d"><sup>4</sup></a></td>
+          <td align="center"  width="9%">0.9572</td>
+          <td align="center"  width="9%">0.5</td>
+          <td align="center"  width="9%">varies<sup><a title="click for an explanation" href="#e"> 5</a></sup></td>
+          <td align="center"  width="9%"><span class="style3">-0.42188</span></td>
+          <td align="center"  width="7%">104.52</td>
+          <td align="center"  width="7%">109.47</td>
+</tr>
+        <tr>
+          <th scope="row" width="22%"><div align="left"><a name="r6s" id="r6s"></a>&nbsp;Six-site <a name="r491" id="r491"></a><sup><a title="go to cited reference"  href="ref5.html#r491">[491]</a></sup></div></th>
+          <td align="center"  width="6%"><a title="click for an explanation" href="#back1"><strong>c/d</strong></a><sup><a title="click for an explanation" href="#g">7</a></sup></td>
+          <td align="center"  width="10%"><p>3.115<sub>OO</sub><br />
+              0.673<sub>HH</sub></p></td>
+          <td align="center"  width="13%">0.715<sub>OO</sub><br />
+            0.115<sub>HH</sub></td>
+          <td align="center"  width="9%">0.980</td>
+          <td align="center"  width="9%">0.8892<sub>L</sub><br />
+            0.230<sub>M</sub></td>
+          <td align="center"  width="9%">+0.477</td>
+          <td align="center"  width="9%">-0.044<sub>L</sub><br />
+            -0.866<sub>M</sub></td>
+          <td align="center"  width="7%">108.00</td>
+          <td align="center"  width="7%">111.00</td>
+</tr>
+</table>
+</div>
+    <div class="style3" style="width:90%; padding-left:5%; padding-right:5%;"><a name="a" id="a"><sup><span class="style8">1</span></sup></a> Average value. <sup><span class="style8"><a name="b" id="b"></a>2</span></sup> Polarizable models. <sup><span class="style8"><a name="c" id="c"></a>3</span></sup> charge = -2.48856; <sup><span class="style8"><a name="d" id="d"></a>4</span></sup> Buckingham potential<sup><a title="click for an explanation" href="#af"> a</a></sup>. This exponential potential presents a more flexible (that is, softer) 
+      surface than the Lennard-Jones r<sup>&minus;12</sup> interaction;<a name="e" id="e"><sup> <span class="style8">5</span></sup></a> with the charge on the oxygen 
+      atom; <sup><span class="style8">6<a name="f" id="f"></a></span></sup><abbr title="Lennard-Jones distance">&sigma;</abbr> and <abbr title="Lennard-Jones energy">&epsilon;</abbr> are Lennard-Jones parameters. The separation and depth of 
+      the potential energy minimum between two similar molecules 
+      (equivalent to diameter). <a name="g" id="g"><sup><span class="style8">7</span></sup></a> has charges on the lone pair sites (<sub>L</sub>) as in <a title="click for an explanation" href="#back1">model 
+      type <strong>d</strong></a> and the mid-point site (<sub>M</sub>) 
+      as in <a title="click for an explanation" href="#back1">model type <strong>c</strong></a>.<a name="h" id="h"><sup><span class="style8">8</span></sup></a> has only a single, center of mass, interaction site with a 
+      tetrahedrally coordinated sticky potential that regulates 
+      the tetrahedral coordination of neighboring molecules. <span class="style8"><sup>9</sup></span><a name="q" id="q"></a> a polarization charge q<sub>pol</sub> (-8) is connected by 
+      a spring to site q<sub>2</sub>, the total charge (q<sub>pol</sub>+q<sub>2</sub>) 
+      being given in the table as q<sub>2</sub>.<span class="style8"><sup>10</sup></span><a name="r" id="r"></a> The charges are smeared (that is, not point charges) 
+      using Gaussian distributions with widths of 0.455 <a href="constants.html#ang" title="Angstrom">&Aring;</a> and 0.610 <a href="constants.html#ang" title="Angstrom">&Aring;</a> for q<sub>1</sub> and q<sub>2</sub> respectively.<span class="style8"><sup>11</sup></span><a name="s" id="s"></a> Zero potential position at 3.25 <a href="constants.html#ang" title="Angstrom">&Aring;</a>.. <span class="style8"><sup>12</sup></span><a name="t" id="t"></a> This model over-structures the water. <span class="style8"><sup>13</sup></span><a name="u" id="u"></a> A 'Drude' particle carrying a negative charge -1.71636e is 
+      attached by a harmonic spring (4184 kJ  &#739; mol<sup>&minus;1</sup> <a href="constants.html#ang" title="Angstrom">&Aring;</a><sup>&minus;2</sup> while the oxygen carries a charge +1.71636e. <span class="style8"><sup>14</sup></span><a name="v" id="v"></a> Induced dipoles are placed on the atoms. The van der Waals terms give a deeper, steeper, and more distant energy minimum (-1.187 kJ  &#739; mol<sup>&minus;1</sup> at 3.726 <a href="constants.html#ang" title="Angstrom">&Aring;</a>) than the typical Lennard-Jones potential. <span class="style8"><sup>15</sup></span><a name="w" id="w"></a> Calculated electrostatics contains dipole, quadrupole, octupole, and hexadecapole terms. <span class="style8"><sup>16</sup></span><a name="x" id="x"></a> The induced dipole has a sublinear dependence on the electric field. <span class="style8"><sup>17</sup></span><a name="y" id="y"></a> The Lennard-Jones function has an exponential form.<span class="style8"><sup> 18</sup></span><a name="z" id="z"></a> The Lennard-Jones function has terms for O and H.<span class="style8"><sup> 19</sup></span><a name="aa" id="aa"></a> Calculated electrostatics contains dipole and quadrupole,  terms for the oxygen atom. <span class="style3"><span class="style8"><sup>20</sup></span><a name="ab" id="ab"></a></span> plus two further sites halfway towards the H atoms with -0.45837 charge, The O atom has +0.11094</div>
+    <p>&nbsp;</p>
+    <p align="left">Some of the above values are varied slightly 
+      by different workers. Other workers use diffuse electron density 
+      [<a  href="ref3.html#r203" name="r203" title="go to cited reference" id="r203">203</a>] or polarizable 
+      versions of the nonpolarizable models, using flexible bonding 
+      (for example, <abbr title="Shell Water, Flexible with Anisotropic polarizability">SWFLEX-AI)</abbr>,&nbsp; 
+      induced dipoles (for example, [<a  href="ref2.html#r181" name="r181" title="go to cited reference" id="r181">181</a>]), 
+      energy optimization (for example, the <abbr title="Transferable Intermolecular Potential with 4 Points and Fluctuating charge">TIP4P-FQ</abbr> version of <abbr title="Transferable Intermolecular Potential with 4 Points">TIP4P</abbr>) or movable charge (for example, <abbr title="Shell Water, Flexible with Anisotropic polarizability">SWFLEX-AI)</abbr>, 
+      all of which generally give better fit but at a significantly 
+      increased computational cost [<a  href="ref2.html#r198" name="r198" title="go to cited reference" id="r198">198</a>]. 
+      A comparison of eleven nonpolarizable classical water models (<abbr title="Transferable Intermolecular Potential with 3 Points">TIP3P</abbr>, <abbr title="Simple Point Charge"> SPC</abbr>, <abbr title="Simple Point Charge">&nbsp;SPC/E</abbr>, flexible SPC, <abbr title="Transferable Intermolecular Potential with 4 Points">TIP4P</abbr>, <abbr title="Transferable Intermolecular Potential with 4 Points for Ice">TIP4P/Ice</abbr>,  <abbr title="Transferable Intermolecular Potential with 4 Points developed in 2005">TIP4P/2005</abbr>, <abbr title="Transferable Intermolecular Potential with 4 Points developed in 2005">flexible TIP4P/2005</abbr>, <abbr title="Transferable Intermolecular Potential with 4 Points for use with Ewald techniques">TIP4P-Ew</abbr>, <abbr title="Transferable Intermolecular Potential with 5 Points">TIP5P</abbr>, <abbr title="Transferable Intermolecular Potential with 5 Points for use with Ewald techniques">&nbsp;TIP5P-Ew</abbr>) has been made with their hydrogen bond networks [<a title="go to cited reference" href="ref42.html#r4193">4193</a><a name="r4193" id="r4193"></a>]. Polarization mutually strengthens the hydrogen bonding and 
+      partially compensates for the absence (except statistically) 
+      of the known long-range interactions and the dependence of 
+      these models on short-ranged forces. Diffuse electron density 
+      [<a title="go to cited reference"  href="ref3.html#r203">203</a>] varies the effective charges 
+      with distance. Such models generally perform better away from 
+      the ambient conditions under which they are parameterized 
+      than the simpler models. </p>
+    <p>&nbsp;</p>
+    <p align="left">In some circumstances, coarse-grained models are helpful. These are computationally cheap for the number of water molecules used and are particularly useful for biomolecular hydration. They suffer in being less useful as predictors. However, some such models have shown promise, such as one that uses cluster units of four water molecules (an incomplete water tetrahedron)  [<a  title="go to cited reference" href="ref27.html#r2656">2656</a><a name="r2656" id="r2656"></a>]. Another, using a so-called 'Quantum Drude Oscillator' consisting of a negative charge bound to a positive center by a quantum harmonic oscillator, generates many-body polarization and  dispersion interactions [<a  title="go to cited reference" href="ref28.html#r2720">2720</a><a name="r2720" id="r2720"></a>]. This model predicts density, surface tension, enthalpy of vaporization, and dielectric constant across  phases and at surfaces, demonstrating good transferability.</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">An eleven-parameter analytical model has been proposed that allows the calculation of properties of water without running simulations. It involves cage structures, two-molecule hydrogen bonding, and Lennard-Jones interactions<sup> <a href="#af">a</a></sup> [<a  title="go to cited reference" href="ref36.html#r3518">3518</a><a name="r3518" id="r3518"></a>]. This model appears similar to my <a href="clusters_overview.html">cluster model</a>. </p>
+    <p>&nbsp;</p>
+    <p align="left">Another  modeling system is density functional theory (DFT), which describes the system  in terms of its three-dimensional electron density and involves an approximate  solution to the Shr&ouml;dinger equation of a many-body system. Although much valuable  and interesting work has been achieved and improvements are ongoing  [<a  href="ref31.html#r3064" name="r3064" title="go to cited reference" id="r3064">3064</a>, <a title="go to cited reference" href="ref45.html#r4454">4454</a><a name="r4454" id="r4454"></a>], this methodology is still incapable of accurately predicting the properties of liquid water over a range of conditions  [<a  href="ref26.html#r2546" name="r2546" title="go to cited reference" id="r2546">2546</a>]. </p>
+    <p align="left">&nbsp;</p>
+    <p align="left">A variety of methods include nuclear quantum effects in dynamics simulations by combining quantum Boltzmann statistics with classical dynamics. These are computationally expensive methods that can be used to compare with infrared spectra. A comparison of models has given the quasi-centroid molecular dynamics (QCMD) model as best for reproducing fundamental transitions in the spectrum [<a  href="ref38.html#r3756" name="r3756" title="go to cited reference" id="r3756">3756</a>]. [<a title="go to top of page" href="#top"><span class="style16">Back to Top&nbsp;</span><img src="images/rtup.gif" border="0" alt="to top of page" width="13" height="12" /></a>]</p>
+    <h2><a name="prop" id="prop"></a>Water model properties</h2>
+    <p>The calculated 
+      physical properties of some of the water models are given below.<a name="back2" id="back2"></a></p>
+    <p>&nbsp;</p>
+    <table border="1" cellspacing="0" width="99%" cellpadding="0"  summary="Calculated physical properties of the water models">
+      <caption>
+      <strong class="style15">Calculated physical properties of the water models</strong>
+      <br />
+      <br />
+      </caption>
+      <tr>
+        <th scope="col"   width="90"><p align="center" ><strong>Model</strong></p></th>
+        <th scope="col"     width="110"><div align="center"><strong>Dipole moment<sup><a href="#ef" name="ebb" id="ebb"> e</a></sup> </strong></div></th>
+        <th scope="col"     width="88"><div align="center"><strong>Dielectric constant</strong></div></th>
+        <th scope="col"     width="125"><div align="center"><strong>self-diffusion, 10<sup>&minus;5</sup> cm<sup>2</sup>/s</strong></div></th>
+        <th scope="col"     width="139"><div align="center"><strong>Average configurational 
+            energy, kJ  &#739; mol<sup>&minus;1</sup></strong></div></th>
+        <th scope="col"    width="78"><div align="center"><strong>Density maximum,<br />&nbsp;&deg;C</strong></div></th>
+        <th scope="col"     width="90"><div align="center"><strong>Expansion coefficient,<br />
+            10<sup>&minus;4</sup>&nbsp;&deg;C<sup>&minus;1</sup></strong></div></th>
+</tr>
+      <tr>
+        <th scope="row"  width="90"><div align="left">&nbsp;<abbr title="Soft sticky dipole">SSD</abbr></div></th>
+        <td    width="110"><p align="left">&nbsp;2.35 <sup>[<a title="go to cited reference"  href="ref6.html#r511">511</a>]</sup> </p></td>
+        <td    width="88"><p align="left">&nbsp;72 <sup>[<a title="go to cited reference"  href="ref6.html#r511">511</a>]</sup></p></td>
+        <td    width="125"><p align="left">&nbsp;2.13 <sup>[<a title="go to cited reference"  href="ref6.html#r511">511</a>]</sup></p></td>
+        <td  align="left"  width="139">&nbsp;-40.2 <sup>[<a title="go to cited reference"  href="ref6.html#r511">511</a>]</sup></td>
+        <td  align="left" width="78">&nbsp;-13 <sup>[<a title="go to cited reference"  href="ref6.html#r511">511</a>]</sup></td>
+        <td   align="center"  width="90">-</td>
+</tr>
+      <tr>
+        <th scope="row"  width="90"><div align="left">&nbsp;<abbr title="Simple Point Charge">SPC</abbr></div></th>
+        <td    width="110"><p align="left">&nbsp;2.27 <a title="go to cited reference"  href="ref2.html#r181"><sup>[181]</sup></a></p></td>
+        <td    width="88"><p align="left">&nbsp;65 <a  href="ref2.html#r185" name="r185" title="go to cited reference" id="r185"><sup>[185]</sup></a></p></td>
+        <td    width="125"><p align="left">&nbsp;3.85 <a  href="ref2.html#r182" name="r182" title="go to cited reference" id="r182"><sup>[182]</sup></a></p></td>
+        <td  align="left"  width="139">&nbsp;-41.0 <a title="go to cited reference"  href="ref2.html#r185"><sup>[185]</sup></a></td>
+        <td   width="78">-45 <a title="go to cited reference"  href="ref10.html#r983"><sup>[983</sup></a><a name="r983" id="r983"></a><a title="go to cited reference"  href="ref10.html#r983"><sup>]</sup></a></td>
+        <td   align="left" width="90">&nbsp;7.3 <a title="go to cited reference"  href="ref8.html#r704"><sup>[704]</sup></a> <sup>**</sup></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Extended Simple Point Charge">&nbsp;SPC/E</abbr></div></th>
+        <td  ><p align="left">&nbsp;2.35 <a title="go to cited reference"  href="ref.html#r3"><sup>[3]</sup></a></p></td>
+        <td  ><p align="left">&nbsp;71 <a title="go to cited reference"  href="ref.html#r3"><sup>[3]</sup></a></p></td>
+        <td  ><p align="left">&nbsp;2.49 <a title="go to cited reference"  href="ref2.html#r182"><sup>[182]</sup></a></p></td>
+        <td  align="left">&nbsp;-41.5 <a title="go to cited reference"  href="ref.html#r3"><sup>[3]</sup></a></td>
+        <td  align="left">&nbsp;-38 <a  href="ref2.html#r183" name="r183" title="go to cited reference" id="r183"><sup>[183]</sup></a></td>
+        <td  align="left">&nbsp;5.14<a title="go to cited reference"  href="ref10.html#r994"> <sup>[994]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"  width="90"><div align="left"><abbr title="Flexible Simple Point Charge">&nbsp;SPC/Fw</abbr></div></th>
+        <td    width="110"><p align="left">&nbsp;2.39<a title="go to cited reference"  href="ref10.html#r994"> <sup>[994]</sup> </a></p></td>
+        <td    width="88"><p align="left">&nbsp;79.63<a title="go to cited reference"  href="ref10.html#r994"> <sup>[994]</sup></a></p></td>
+        <td    width="125"><p align="left">&nbsp;2.32<a title="go to cited reference"  href="ref10.html#r994"> <sup>[994]</sup></a></p></td>
+        <td  align="center"  width="139">-</td>
+        <td  align="center" width="78">-</td>
+        <td   align="left" width="90">&nbsp;4.98<a title="go to cited reference"  href="ref10.html#r994"> <sup>[994]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"  width="90"><div align="left"><abbr title="Polarizable Point Charge">&nbsp;PPC</abbr></div></th>
+        <td    width="110"><p align="left">&nbsp;2.52 <a title="go to cited reference"  href="ref.html#r3"><sup>[3]</sup></a></p></td>
+        <td    width="88"><p align="left">&nbsp;77 <a title="go to cited reference"  href="ref.html#r3"><sup>[3]</sup></a></p></td>
+        <td    width="125"><p align="left">&nbsp;2.6 <a title="go to cited reference"  href="ref.html#r3"><sup>[3]</sup></a></p></td>
+        <td  align="left"  width="139">&nbsp;-43.2 <a title="go to cited reference"  href="ref.html#r3"><sup>[3]</sup></a></td>
+        <td  align="left" width="78">&nbsp;+4 <a  href="ref2.html#r184" name="r184" title="go to cited reference" id="r184"><sup>[184]</sup></a></td>
+        <td   align="center" width="90">-</td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 3 Points">&nbsp;TIP3P</abbr></div></th>
+        <td  ><p align="left">&nbsp;2.35 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></p></td>
+        <td  ><p align="left">&nbsp;82 <a title="go to cited reference"  href="ref.html#r3"><sup>[3]</sup></a></p></td>
+        <td  align="left">&nbsp;5.19 <a title="go to cited reference"  href="ref2.html#r182"><sup>[182]</sup></a></td>
+        <td  align="left">&nbsp;-41.1 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></td>
+        <td  align="left">&nbsp;-91 <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref10.html#r983"><sup>983</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></td>
+        <td  align="left">&nbsp;9.2 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Flexible Transferable Intermolecular Potential with 3 Points">&nbsp;TIP3P/Fw</abbr></div></th>
+        <td><p align="left">&nbsp;2.57<a title="go to cited reference"  href="ref10.html#r994"> <sup>[994]</sup></a></p></td>
+        <td><p align="left">&nbsp;193<a title="go to cited reference"  href="ref10.html#r994"> <sup>[994]</sup></a></p></td>
+        <td  align="left">&nbsp;3.53<a title="go to cited reference"  href="ref10.html#r994"> <sup>[994]</sup></a></td>
+        <td  align="center">-</td>
+        <td  align="center">-</td>
+        <td  align="left">&nbsp;7.81<a title="go to cited reference"  href="ref10.html#r994"> <sup>[994]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="inexpensive Atomic
+Multipole Optimized Energetics for Biomolecular Applications)">&nbsp;iAMOEBA</abbr></div></th>
+        <td><p align="left">&nbsp;2.78 <sup><a title="go to cited reference"  href="ref21.html#r2031">[2031]</a></sup></p></td>
+        <td><p align="left">&nbsp;80.7 <sup><a title="go to cited reference"  href="ref21.html#r2031">[2031]</a></sup></p></td>
+        <td  align="left">&nbsp;2.54 <sup><a title="go to cited reference"  href="ref21.html#r2031">[2031]</a></sup></td>
+        <td  align="center">-</td>
+        <td  align="center">4 <sup><a title="go to cited reference"  href="ref21.html#r2031">[2031]</a></sup></td>
+        <td  align="left">&nbsp;2.5 <sup><a title="go to cited reference"  href="ref21.html#r2031">[2031]</a></sup></td>
+</tr>
+      <tr>
+        <th scope="row"  width="90"><div align="left"><abbr title="inexpensive Atomic
+Multipole Optimized Energetics for Biomolecular Applications)">&nbsp;uAMOEBA</abbr></div></th>
+        <td    width="110"><p align="left">&nbsp;2.80 <sup><a title="go to cited reference"  href="ref25.html#r2401">[2401]</a></sup></p></td>
+        <td    width="88"><p align="left">&nbsp;76.3 <sup><a title="go to cited reference"  href="ref25.html#r2401">[2401]</a></sup></p></td>
+        <td  align="left"  width="125">&nbsp;2.41 <sup><a title="go to cited reference"  href="ref25.html#r2401">[2401]</a></sup></td>
+        <td  align="center">-</td>
+        <td  align="center">-</td>
+        <td  align="left"  width="90">&nbsp;3.38 <sup><a title="go to cited reference"  href="ref25.html#r2401">[2401]</a></sup></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Quantum Chemical Topology">&nbsp;QCT</abbr> ** </div></th>
+        <td>&nbsp;1.85 <a title="go to cited reference"  href="ref13.html#r1251"><sup>[1251]</sup></a></td>
+        <td align="center">&nbsp;-</td>
+        <td  align="center"><div align="left">&nbsp;1.5 <a title="go to cited reference"  href="ref13.html#r1251"><sup>[1251]</sup></a></div></td>
+        <td  align="center"><div align="left">&nbsp;-42.7 <a title="go to cited reference"  href="ref13.html#r1251"><sup>[1251]</sup></a></div></td>
+        <td  align="left">&nbsp;+10 <a title="go to cited reference"  href="ref13.html#r1251"><sup>[1251]</sup></a></td>
+        <td  align="left">&nbsp;3.5 <a title="go to cited reference"  href="ref13.html#r1251"><sup>[1251]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"  width="90"><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points">&nbsp;TIP4P</abbr></div></th>
+        <td   width="110"><p align="left">&nbsp;2.18 <a title="go to cited reference"  href="ref.html#r3"><sup>[3</sup></a><sup>,</sup><a title="go to cited reference"  href="ref2.html#r180"><sup>180]</sup></a></p></td>
+        <td    width="88"><p align="left">&nbsp;53<sup><a title="click for an explanation" href="#a"> a</a></sup> <a title="go to cited reference"  href="ref.html#r3"><sup>[3]</sup></a></p></td>
+        <td  align="left"  width="125">&nbsp;3.29 <a title="go to cited reference"  href="ref2.html#r182"><sup>[182]</sup></a></td>
+        <td  align="left"  width="139">&nbsp;-41.8 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></td>
+        <td  align="left" width="78">&nbsp;-25 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></td>
+        <td  align="left"  width="90">&nbsp;4.4 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points for use with Ewald techniques">&nbsp;TIP4P-Ew</abbr> </div></th>
+        <td  >&nbsp;2.32 <a title="go to cited reference"  href="ref7.html#r649"><sup>[649]</sup></a></td>
+        <td  >&nbsp;62.9 <a title="go to cited reference"  href="ref7.html#r649"><sup>[649]</sup></a></td>
+        <td  align="left">&nbsp;2.4 <a title="go to cited reference"  href="ref7.html#r649"><sup>[649]</sup></a></td>
+        <td  align="left">&nbsp;-46.5 <a title="go to cited reference"  href="ref7.html#r649"><sup>[649]</sup></a></td>
+        <td  align="left">&nbsp;+1<a title="go to cited reference"  href="ref7.html#r649"><sup>[649]</sup></a></td>
+        <td  align="left">&nbsp;3.1<a title="go to cited reference"  href="ref7.html#r649"><sup>[649]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points and Fluctuating charge">&nbsp;TIP4P-FQ</abbr></div></th>
+        <td  ><p align="left">&nbsp;2.64<a title="go to cited reference"  href="ref2.html#r197"><sup>[197]</sup></a></p></td>
+        <td  ><p align="left">&nbsp;79 <a title="go to cited reference"  href="ref2.html#r197"><sup>[197]</sup></a></p></td>
+        <td  align="left">&nbsp;1.93 <a title="go to cited reference"  href="ref2.html#r197"><sup>[197]</sup></a></td>
+        <td  align="left">&nbsp;-41.4<sup> <a title="go to cited reference"  href="ref3.html#r201">[201]</a></sup></td>
+        <td  align="left"><abbr title="Simple Point Charge">&nbsp;+7 <a title="go to cited reference"  href="ref2.html#r197"><sup>[197]</sup></a></abbr></td>
+        <td  align="center">-</td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points developed in 2005">&nbsp;<a name="tip4p" id="tip4p"></a>TIP4P/2005</abbr></div></th>
+        <td><p align="left">&nbsp;2.305 <sup>[<a title="go to cited reference"  href="ref10.html#r984">984</a>]</sup></p></td>
+        <td><p align="left">&nbsp;60 <sup>[<a title="go to cited reference"  href="ref10.html#r984">984</a>]</sup></p></td>
+        <td  align="left">&nbsp;2.08 <sup>[<a title="go to cited reference"  href="ref10.html#r984">984</a>]</sup></td>
+        <td  align="center">-</td>
+        <td  align="left">&nbsp;+5 <sup>[<a title="go to cited reference"  href="ref10.html#r984">984</a>]</sup></td>
+        <td  align="left">&nbsp;2.8 <sup>[<a title="go to cited reference"  href="ref10.html#r984">984</a>]</sup></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="flexible version of Transferable Intermolecular Potential with 4 Points developed in 2005">&nbsp;TIP4P/2005f</abbr></div></th>
+        <td><p align="left">&nbsp;2.319 <sup>[<a title="go to cited reference"  href="ref18.html#r1765">1765</a>]</sup></p></td>
+        <td><p align="left">&nbsp;55.3 <sup>[<a title="go to cited reference"  href="ref18.html#r1765">1765</a>]</sup></p></td>
+        <td  align="left">&nbsp;1.93 <sup>[<a title="go to cited reference"  href="ref18.html#r1765">1765</a> ]</sup></td>
+        <td  align="center">-</td>
+        <td  align="left">&nbsp;+7 <sup>[<a title="go to cited reference"  href="ref18.html#r1765">1765</a> ]</sup></td>
+        <td  align="center">&nbsp;-</td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points developed with dielectric">&nbsp;TIP4P/&epsilon;</abbr></div></th>
+        <td><p align="left">&nbsp;2.4345 <sup>[<a title="go to cited reference"  href="ref25.html#r2444">2444</a>]</sup></p></td>
+        <td><p align="left">&nbsp;78.3 <sup>[<a title="go to cited reference"  href="ref25.html#r2444">2444</a>]</sup></p></td>
+        <td  align="left">&nbsp;2.10 <sup>[<a title="go to cited reference"  href="ref25.html#r2444">2444</a>]</sup></td>
+        <td  align="center">-</td>
+        <td  align="left"> &nbsp;+4 <sup>[<a title="go to cited reference"  href="ref25.html#r2444">2444</a>]</sup></td>
+        <td  align="center">&nbsp;-</td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Optimized point charge">&nbsp;OPC</abbr></div></th>
+        <td><p align="left">&nbsp;2.48 <sup>[<a title="go to cited reference"  href="ref22.html#r2168">2168</a>]</sup></p></td>
+        <td><p align="left">&nbsp;78.4 <sup>[<a title="go to cited reference"  href="ref22.html#r2168">2168</a>]</sup></p></td>
+        <td  align="left">&nbsp;2.3 <sup>[<a title="go to cited reference"  href="ref22.html#r2168">2168</a>]</sup></td>
+        <td  align="center">-</td>
+        <td  align="left">&nbsp; -1 <sup>[<a title="go to cited reference"  href="ref22.html#r2168">2168</a>]</sup></td>
+        <td  align="left">&nbsp;2.7 <sup>[<a title="go to cited reference"  href="ref22.html#r2168">2168</a>]</sup></td>
+</tr>
+      <tr>
+        <th scope="row"  width="90"><div align="left"><abbr title="Optimized point charge, 3-points">OPC3</abbr></div></th>
+        <td    width="110"><p align="left">&nbsp;2.43 <sup>[<a title="go to cited reference"  href="ref28.html#r2722">2722</a>]</sup></p></td>
+        <td    width="88"><p align="left">&nbsp;78.4 <sup>[<a title="go to cited reference"  href="ref28.html#r2722">2722</a>]</sup></p></td>
+        <td  align="left"  width="125">&nbsp;2.3 <sup>[<a title="go to cited reference"  href="ref28.html#r2722">2722</a>]</sup></td>
+        <td  align="center"  width="139">-</td>
+        <td  align="left" width="78">&nbsp;&nbsp; -13 <sup>[<a title="go to cited reference"  href="ref28.html#r2722">2722</a>]</sup></td>
+        <td  align="left"  width="90">&nbsp;4.3 <sup>[<a title="go to cited reference"  href="ref28.html#r2722">2722</a>]</sup></td>
+</tr>
+      <tr>
+        <th scope="row" width="90"><div align="left"><abbr title="Shell Water, Flexible with Anisotropic polarizability">&nbsp;SWFLEX-AI</abbr>&nbsp;</div></th>
+        <td    width="110"><p align="left">&nbsp;2.69 <a title="go to cited reference"  href="ref.html#r3"><sup>[201]</sup></a></p></td>
+        <td   align="left"  width="88">&nbsp;116 <a title="go to cited reference"  href="ref.html#r3"><sup>[201]</sup></a></td>
+        <td  align="left"  width="125">&nbsp;3.66 <a title="go to cited reference"  href="ref.html#r3"><sup>[201]</sup></a></td>
+        <td  align="left"  width="139">&nbsp;-41.7 <a title="go to cited reference"  href="ref.html#r3"><sup>[201]</sup></a></td>
+        <td  align="center" width="78">-</td>
+        <td  align="center" width="90">-</td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Charge-On-Spring, Gas-phase values">&nbsp;COS/G3</abbr> ** </div></th>
+        <td  ><p align="left">&nbsp;2.57<a title="go to cited reference"  href="ref8.html#r704"><sup> [704]</sup></a></p></td>
+        <td  ><p align="left">&nbsp;88&nbsp;<a title="go to cited reference"  href="ref8.html#r704"><sup>[704]</sup></a></p></td>
+        <td  align="left">&nbsp;2.6&nbsp;<a title="go to cited reference"  href="ref8.html#r704"><sup>[704]</sup></a></td>
+        <td  align="left">&nbsp;-41.1&nbsp;<a title="go to cited reference"  href="ref8.html#r704"><sup>[704]</sup></a></td>
+        <td  align="center">-78<a  href="ref20.html#r1939" name="r1939" title="go to cited reference" id="r1939"><sup>[1939]</sup></a></td>
+        <td  align="left">&nbsp;7.0&nbsp;<a title="go to cited reference"  href="ref8.html#r704"><sup>[704]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Charge-On-Spring, Gas-phase values">&nbsp;COS/D2</abbr> </div></th>
+        <td  ><p align="left">&nbsp;2.55<a title="go to cited reference"  href="ref8.html#r704"><sup> [</sup></a><a  href="ref17.html#r1617"  title="go to cited reference"><sup>1617</sup></a><a title="go to cited reference"  href="ref8.html#r704"><sup>]</sup></a></p></td>
+        <td  ><p align="left">&nbsp;78.9&nbsp;<a title="go to cited reference"  href="ref8.html#r704"><sup>[</sup></a><a  href="ref17.html#r1617"  title="go to cited reference"><sup>1617</sup></a><a title="go to cited reference"  href="ref8.html#r704"><sup>]</sup></a></p></td>
+        <td  align="left">&nbsp;2.2&nbsp;<a title="go to cited reference"  href="ref8.html#r704"><sup> [</sup></a><a  href="ref17.html#r1617"  title="go to cited reference"><sup>1617</sup></a><a title="go to cited reference"  href="ref8.html#r704"><sup>]</sup></a></td>
+        <td  align="left">&nbsp;-41.8&nbsp;<a title="go to cited reference"  href="ref8.html#r704"><sup> [</sup></a><a  href="ref17.html#r1617"  title="go to cited reference"><sup>1617</sup></a><a title="go to cited reference"  href="ref8.html#r704"><sup>]</sup></a></td>
+        <td  align="center">-</td>
+        <td  align="left">&nbsp;4.9&nbsp;<a title="go to cited reference"  href="ref8.html#r704"><sup> [</sup></a><a  href="ref17.html#r1617"  title="go to cited reference"><sup>1617</sup></a><a title="go to cited reference"  href="ref8.html#r704"><sup>]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Gaussian Charge Polarizable Model">&nbsp;GCPM</abbr> </div></th>
+        <td  ><p align="left">&nbsp;2.723&nbsp;<a title="go to cited reference"  href="ref9.html#r859"><sup>[859</sup></a><a title="go to cited reference"  href="ref9.html#r859"><sup>]</sup></a></p></td>
+        <td  ><p align="left">&nbsp;84.3&nbsp;<a title="go to cited reference"  href="ref9.html#r859"><sup>[859</sup></a><a title="go to cited reference"  href="ref9.html#r859"><sup>]</sup></a></p></td>
+        <td  align="left">&nbsp;2.26&nbsp;<a title="go to cited reference"  href="ref9.html#r859"><sup>[859</sup></a><a title="go to cited reference"  href="ref9.html#r859"><sup>]</sup></a></td>
+        <td  align="left">&nbsp;-44.8&nbsp;<a title="go to cited reference"  href="ref9.html#r859"><sup>[859]</sup></a></td>
+        <td  align="left">&nbsp;-13&nbsp;<a title="go to cited reference"  href="ref9.html#r859"><sup>[859</sup></a><a title="go to cited reference"  href="ref9.html#r859"><sup>]</sup></a></td>
+        <td  align="center">-</td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left">&nbsp;<abbr title="Simple Water Model with four sites and a Negative charge on the Drude particle and Polarizability">SWM4-NDP</abbr></div></th>
+        <td  ><p align="left">&nbsp;2.461&nbsp;<a title="go to cited reference"  href="ref9.html#r859"><sup>[</sup></a><a title="go to cited reference"  href="ref10.html#r933"><sup>933</sup></a><a title="go to cited reference"  href="ref9.html#r859"><sup>]</sup></a></p></td>
+        <td  ><p align="left">&nbsp;79&nbsp;&nbsp;<a title="go to cited reference"  href="ref9.html#r859"><sup>[</sup></a><a title="go to cited reference"  href="ref10.html#r933"><sup>933</sup></a><a title="go to cited reference"  href="ref9.html#r859"><sup>]</sup></a></p></td>
+        <td  align="left">&nbsp;2.33&nbsp;&nbsp;<a title="go to cited reference"  href="ref9.html#r859"><sup>[</sup></a><a title="go to cited reference"  href="ref10.html#r933"><sup>933</sup></a><a title="go to cited reference"  href="ref9.html#r859"><sup>]</sup></a></td>
+        <td  align="left">&nbsp;-41.5&nbsp;&nbsp;<a title="go to cited reference"  href="ref9.html#r859"><sup>[</sup></a><a title="go to cited reference"  href="ref10.html#r933"><sup>933</sup></a><a title="go to cited reference"  href="ref9.html#r859"><sup>]</sup></a></td>
+        <td  align="center"><div >&nbsp;&lt;-53 <sup>[<a title="go to cited reference"  href="ref20.html#r1999">1999</a>]</sup></div></td>
+        <td  align="center">-</td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left">&nbsp;<abbr title="Baranyai Kiss">BK3</abbr></div></th>
+        <td>&nbsp;2.644 <a title="go to cited reference"  href="ref21.html#r2080"><sup>[2080]</sup></a></td>
+        <td align="left">&nbsp;79 <a title="go to cited reference"  href="ref21.html#r2080"><sup>[2080]</sup></a></td>
+        <td  align="center"><div align="left">&nbsp;2.28 <a title="go to cited reference"  href="ref21.html#r2080"><sup>[2080]</sup></a></div></td>
+        <td  align="center"><div align="left">&nbsp;-43.32 <a title="go to cited reference"  href="ref21.html#r2080"><sup>[2080]</sup></a></div></td>
+        <td  align="left">&nbsp;+4 <a title="go to cited reference"  href="ref21.html#r2080"><sup>[2080]</sup></a></td>
+        <td  align="left">&nbsp;3.01 <a title="go to cited reference"  href="ref21.html#r2080"><sup>[2080]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left">&nbsp;<abbr title="Simple Water Model with Six sites">SWM6</abbr></div></th>
+        <td  ><p align="left">&nbsp;2.431 <sup>[<a title="go to cited reference"  href="ref20.html#r1999">1999</a>]</sup></p></td>
+        <td  ><p align="left">&nbsp;78.1 <sup>[<a title="go to cited reference"  href="ref20.html#r1999">1999</a>]</sup></p></td>
+        <td  align="left">&nbsp;2.14 <sup>[<a title="go to cited reference"  href="ref20.html#r1999">1999</a>]</sup></td>
+        <td  align="left">&nbsp;-41.5 <sup>[<a title="go to cited reference"  href="ref20.html#r1999">1999</a>]</sup></td>
+        <td  align="center"><div >-48 <sup>[<a title="go to cited reference"  href="ref20.html#r1999">1999</a>]</sup></div></td>
+        <td  align="center">-</td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 5 Points">&nbsp;TIP5P</abbr></div></th>
+        <td  ><p align="left">&nbsp;2.29 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></p></td>
+        <td  ><p align="left">&nbsp;81.5 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></p></td>
+        <td  align="left">&nbsp;2.62 <a title="go to cited reference"  href="ref2.html#r182"><sup>[182]</sup></a></td>
+        <td  align="left">&nbsp;-41.3 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></td>
+        <td  align="left">&nbsp;+4 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></td>
+        <td  align="left">&nbsp;6.3 <a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 5 Points for use with Ewald techniques">&nbsp;TIP5P-Ew</abbr></div></th>
+        <td><p align="left">&nbsp;2.29 <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref7.html#r619"><sup>619</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></p></td>
+        <td><p align="left">&nbsp;92 <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref7.html#r619"><sup>619</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></p></td>
+        <td  align="left">&nbsp;2.8 <a title="go to cited reference"  href="ref2.html#r182"><sup>[</sup></a><a title="go to cited reference"  href="ref7.html#r619"><sup>619</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></td>
+        <td  align="center">-</td>
+        <td  align="left">&nbsp;+8 <a title="go to cited reference"  href="ref2.html#r182"><sup>[</sup></a><a title="go to cited reference"  href="ref7.html#r619"><sup>619</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></td>
+        <td  align="left">&nbsp;4.9<a title="go to cited reference"  href="ref2.html#r182"><sup>[</sup></a><a title="go to cited reference"  href="ref7.html#r619"><sup>619</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></td>
+    </tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 5 Points for use with Ewald techniques">&nbsp;TIP5P-2018</abbr></div></th>
+        <td><p align="left">&nbsp;2.504 <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref35.html#r3480"><sup>3480</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></p></td>
+        <td><p align="left">&nbsp;127 <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref35.html#r3480"><sup>3480</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></p></td>
+        <td  align="left"> &nbsp;2.34 <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref35.html#r3480"><sup>3480</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></td>
+        <td  align="center">-</td>
+        <td  align="left">&nbsp;+4 <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref35.html#r3480"><sup>3480</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></td>
+        <td  align="left">&nbsp;4.2 <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref35.html#r3480"><sup>3480</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></td>
+    </tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Thole-Type Model polarizable and Flexible">&nbsp;TTM2-F</abbr></div></th>
+        <td  ><p align="left">&nbsp;2.67 <sup>[<a title="go to cited reference"  href="ref11.html#r1027">1027]</a></sup></p></td>
+        <td  ><p align="left">&nbsp;67.2 <sup>[<a title="go to cited reference"  href="ref11.html#r1027">1027]</a></sup></p></td>
+        <td  align="left">&nbsp;1.4 <sup>[<a title="go to cited reference"  href="ref11.html#r1027">1027]</a></sup></td>
+        <td  align="left"><div align="left">&nbsp;-45.1 <sup>[<a title="go to cited reference"  href="ref11.html#r1027">1027]</a></sup></div></td>
+        <td  align="center">- </td>
+        <td  align="center">- </td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 5 Points for use with Ewald techniques">&nbsp;</abbr><abbr title="Transferable Intermolecular Potential with 5 Points">TIP7P</abbr> <a title="go to cited reference"  href="ref2.html#r180"><sup>[</sup></a><a title="go to cited reference"  href="ref37.html#r3644"><sup>3644</sup></a><a title="go to cited reference"  href="ref2.html#r180"><sup>]</sup></a></div></th>
+        <td  > &nbsp;2.378</td>
+        <td  >&nbsp;76.098</td>
+        <td  align="left">&nbsp;2.3</td>
+        <td  align="center">-</td>
+        <td  align="left">&nbsp;+4</td>
+        <td  align="left">&nbsp;2.319</td>
+</tr>
+      <tr>
+        <th scope="row"  width="90"><div align="left"><abbr title="Polarizable five-site, fitted using the aug-cc-pVTZ basis set">&nbsp;POL5/TZ</abbr></div></th>
+        <td    width="110"><p align="left">&nbsp;2.712 <sup><a title="go to cited reference"  href="ref3.html#r256">[256]</a></sup></p></td>
+        <td    width="88"><p align="left">&nbsp;98 <sup><a title="go to cited reference"  href="ref3.html#r256">[256]</a></sup></p></td>
+        <td  align="left"  width="125">&nbsp;1.81 <sup><a title="go to cited reference"  href="ref3.html#r256">[256]</a></sup></td>
+        <td  align="left"  width="139">&nbsp;-41.5 <sup><a title="go to cited reference"  href="ref3.html#r256">[256]</a></sup></td>
+        <td  align="left" width="78">&nbsp;+25 <sup><a title="go to cited reference"  href="ref3.html#r256">[256]</a></sup></td>
+        <td   align="center">-</td>
+</tr>
+      <tr>
+        <th scope="row"><div align="left">&nbsp;Six-site <a title="click for an explanation" href="#r6s">*</a></div></th>
+        <td><p align="left">&nbsp;1.89 <a title="go to cited reference"  href="ref5.html#r491"><sup>[491]</sup></a></p></td>
+        <td><p align="left">&nbsp;33 <a title="go to cited reference"  href="ref5.html#r491"><sup>[491]</sup></a></p></td>
+        <td  align="center">-</td>
+        <td  align="center">-</td>
+        <td  align="left">&nbsp;+14 <a title="go to cited reference"  href="ref5.html#r491"><sup>[491]</sup></a></td>
+        <td  align="left">&nbsp;2.4 <a title="go to cited reference"  href="ref5.html#r491"><sup> [491]</sup></a></td>
+  </tr>
+      <tr>
+        <th scope="row"  width="90"><div align="left">&nbsp;<abbr title="Many Body with
+ polarization">MB-pol</abbr> <sup>[<a title="go to cited reference"  href="ref32.html#r3133">3133</a>]</sup></div></th>
+        <td    width="110"><p align="center">-</p></td>
+        <td    width="88"><p align="left">&nbsp;68.4</p></td>
+        <td  align="left"  width="125">&nbsp;2.3</td>
+        <td  align="center"  width="139">-</td>
+        <td  align="left" width="78">&nbsp;-10</td>
+        <td  align="left"  width="90">&nbsp;3.5</td>
+</tr>
+      <tr>
+        <th scope="row"  width="90" height="19"><p align="right">Experimental</p></th>
+        <td    width="110" height="19"><p align="left">&nbsp;<a title="go to 'Water properties data' page"  href="water_properties.html#Dipole_moment">2.95</a></p></td>
+        <td    width="88" height="19"><p align="left">&nbsp;<a title="go to 'Water properties data' page"  href="water_properties.html#Dielectric_constant">78.4</a></p></td>
+        <td    width="125" height="19"><p align="left">&nbsp;<a title="go to 'Water properties data' page"  href="water_properties.html#Diffusion_coefficient">2.30</a></p></td>
+        <td  align="left"  width="139" height="19"><p align="left">&nbsp;-41.5 <abbr title="Simple Point Charge"><a title="go to cited reference"  href="ref2.html#r180"><sup>[180]</sup></a></abbr></p></td>
+        <td   width="78" height="19"><p align="left">&nbsp;+<a title="go to 'Water properties data' page"  href="water_properties.html#Density">3.984</a></p></td>
+        <td    width="90" height="19"><p align="left">&nbsp;<a title="go to 'Water properties data' page"  href="water_properties.html#Expansion">2.53</a></p></td>
+</tr>
+</table>
+    <p align="center" class="style3">All the data is at 25&nbsp;&deg;C and 1 atm, except * at 20&nbsp;&deg;C 
+      and ** at 27&nbsp;&deg;C. </p>
+    <p align="center" class="style3">&nbsp;</p>
+    Many of the data values given in the <a title="click for an explanation" href="#back2">table</a> vary significantly between different researchers (see, <a title="go to cited reference"  href="ref2.html#r185">[185]</a>). A comparison of some of 
+    the properties of the gas phase dimers for various models is given  [<a title="go to cited reference"  href="ref8.html#r704">704</a>].<sup><a href="#bf" name="bbb" id="bbb"> b</a></sup> Generally, rigid models give excessive stabilization of the dimer compared with polarizable models [<a title="go to cited reference"  href="ref13.html#r1241">1241</a><a name="r1241" id="r1241"></a>]. As can be deduced from the data given (and other data), although 
+    such simple models are of great utility, no universally applicable 
+    model can be identified at this time. It should also be noted 
+    that many simulations are performed with just a few hundred 
+    water molecules within rectangular periodic boxes no more 
+    than 2.5 nm along each edge for times equivalent to a few 
+    picoseconds; conditions that reduce discovery of long-range 
+    effects and introduce artifacts. The use of cut-off lengths (even 
+    long ones) in the intermolecular interactions may also introduce 
+    artifacts [<a title="go to cited reference"  href="ref8.html#r761">761</a><a name="r761" id="r761"></a>]. 
+    It should be noted that there is a strong correlation between 
+    the length scale of any water structuring and the timescale 
+    which is required to see it. The predictive value of water 
+    models has been questioned [<a  href="ref3.html#r202" name="r202" title="go to cited reference" id="r202">202</a>] 
+    and, even with current developments, their general application 
+    should be approached with caution [<a title="go to cited reference"  href="ref3.html#r203">203</a>].
+    <div class="floatright" style="width:400px">
+      <table border="1" cellspacing="0" width="97%" cellpadding="0" summary="Errors found with 
+        rigid water models">
+        <caption>
+        <span class="style15"><strong>Errors found with 
+          rigid water models, 25&nbsp;&deg;C</strong> [<a title="go to cited reference"  href="ref19.html#r1858">1858</a><a name="r1858" id="r1858"></a>] </span>
+        <br />
+        <br />
+        </caption>
+        <tr>
+          <th  width="25%" rowspan="2" scope="col"><p align="center"><strong>Model</strong></p></th>
+          <th colspan="3" align="center" scope="col"><strong>% of the experimental value</strong></th>
+</tr>
+        <tr>
+          <th scope="col" align="center"><strong><abbr title="Lennard-Jones distance">Specific heat, </abbr>C<sub>P</sub></strong></th>
+          <th scope="col" align="center"><strong><abbr title="Lennard-Jones energy">Shear viscosity</abbr></strong></th>
+          <th scope="col" align="center"><strong>Thermal conductivity</strong></th>
+</tr>
+        <tr>
+          <th scope="row" width="25%"><div align="left"><abbr title="Simple Point Charge">&nbsp;SPC </abbr></div></th>
+          <td align="center"  width="22%">102</td>
+          <td align="center"  width="21%">31</td>
+          <td align="center"  width="32%">144</td>
+</tr>
+        <tr>
+          <th scope="row" width="25%" height="20"><div align="left"><abbr title="Extended Simple Point Charge">&nbsp;SPC/E </abbr></div></th>
+          <td align="center"  width="22%" height="20">108</td>
+          <td align="center"  width="21%" height="20">37</td>
+          <td align="center"  width="32%" height="20">153</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Transferable Intermolecular Potential with 3 Points">&nbsp;TIP3P</abbr></div></th>
+          <td align="center">107</td>
+          <td align="center">36</td>
+          <td align="center">146</td>
+</tr>
+        <tr>
+          <th scope="row" width="25%"><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points">&nbsp;TIP4P</abbr></div></th>
+          <td align="center"  width="22%">118</td>
+          <td align="center"  width="21%">47</td>
+          <td align="center"  width="32%">135</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points for use with Ewald techniques">&nbsp;TIP4P-Ew</abbr></div></th>
+          <td align="center">115</td>
+          <td align="center">64</td>
+          <td align="center">147</td>
+</tr>
+        <tr>
+          <th scope="row"><div align="left"><abbr title="Transferable Intermolecular Potential with 4 Points developed in 2005">&nbsp;TIP4P/2005</abbr></div></th>
+          <td align="center">120</td>
+          <td align="center">65</td>
+          <td align="center">149</td>
+</tr>
+        <tr>
+          <th  scope="row" ><div align="left"><abbr title="Transferable Intermolecular Potential with 5 Points">&nbsp;TIP5P</abbr></div></th>
+          <td align="center">120</td>
+          <td align="center">88</td>
+          <td align="center">111</td>
+</tr>
+        <tr>
+          <th scope="row" width="25%"><div align="left"><abbr title="Transferable Intermolecular Potential with 5 Points for use with Ewald techniques">&nbsp;TIP5P-Ew</abbr></div></th>
+          <td align="center"  width="22%">141</td>
+          <td align="center"  width="21%">91</td>
+          <td align="center"  width="32%">102</td>
+</tr>
+</table>
+</div>
+    <p>&nbsp;</p>
+    <p align="left"><a name="errs" id="errs"></a>The water molecule is a flexible molecule with electronic 
+      polarization and models that do not include both of these characteristics 
+      together with their three body interactions are unlikely to be good predictors. This can be seen from the table opposite where the physical parameters determined from the best available rigid models   are seen to be unpredictable and unreliable 
+      [<a title="go to cited reference"  href="ref19.html#r1858">1858</a>]. Also, such models do somewhat worse as the temperature is lowered.</p>
+    <p>&nbsp;</p>
+    <p align="left">The agreement of the <a title="go to 'Water clusters' page"  href="icosahedral_water_clusters.html#Fig2">icosahedral 
+      cluster model</a> of water with the <a title="go to 'Evidence for water clusters' page"  href="cluster_evidence.html#Fig1">O&middot;&middot;&middot;O 
+      radial distribution function, </a>and the long-range structure apparent from X-ray diffraction   [<a  href="ref15.html#r1476" name="r1476" title="go to cited reference" id="r1476">1476</a>], are in marked contrast to 
+      the use of&nbsp;many polarizable and nonpolarizable models 
+      for water, which do not show any <a href="cluster_evidence.html#fine">fine 
+      structure</a>. The popular <abbr title="Transferable Intermolecular Potential with 4 Points">TIP4P</abbr> model underestimates the <a title="go to 'Water molecular structure' page"  href="water_hydrogen_bonding.html#e">tetrahedral nature</a> of the water molecules' environments, which explains its poor 
+      estimate of the relative permittivity (dielectric constant). It is, however, remarkably 
+      good at qualitatively describing water's phase diagram [<a title="go to cited reference"  href="ref7.html#r669">669</a><a name="r669" id="r669"></a>], 
+      and this has been developed further in <abbr title="Transferable Intermolecular Potential with 4 Points for Ice">TIP4P/Ice</abbr> [<a title="go to cited reference"  href="ref9.html#r838">838</a>] and TIP4PQ/2005 [<a title="go to cited reference" href="ref19.html#r1895">1895</a><a name="r1895" id="r1895"></a>] where 16 CPU.years of computation was required. The <abbr title="Extended Simple Point Charge">SPC/E</abbr>, <abbr title="Polarizable Point Charge">PPC</abbr>, and <abbr title="Transferable Intermolecular Potential with 4 Points">TIP4P</abbr>, 
+      [<a title="go to cited reference"  href="ref.html#r3">3</a>] and <abbr title="Brodholt-Sampoli-Vallauri">BSV</abbr>, <abbr title="Chialvo and Cummings">CC</abbr>, <abbr title="Dang and Chang">DC</abbr>, <abbr title="Extended Simple Point Charge">SPC/E</abbr>, and <abbr title="Transferable Intermolecular Potential with 4 Points">TIP4P</abbr>, 
+      [<a  href="ref.html#r93" name="r93" title="go to cited reference" id="r93">93</a>] models are reported 
+      as failing to describe the experimental O&middot;&middot;&middot;O 
+      radial distribution function  properly. The <abbr title="Transferable Intermolecular Potential with 3 Points">TIP3P</abbr> and <abbr title="Extended Simple Point Charge">SPC</abbr> show particularly poor agreement. The <abbr title="Transferable Intermolecular Potential with 4 Points">TIP4P</abbr>, <abbr title="Extended Simple Point Charge">SPC/E</abbr>, and <abbr title="Polarizable Point Charge">PPC</abbr> show improved agreement but the  models <abbr title="Transferable Intermolecular Potential with 4 Points and Fluctuating charge">TIP4P-FQ,</abbr> and the increasingly used <abbr title="Transferable Intermolecular Potential with 5 Points">TIP5P,</abbr> give further improvement [<a  href="ref2.html#r199" name="r199" title="go to cited reference" id="r199">199</a>] 
+      at an increased computational cost. However different the model's O&middot;&middot;&middot;O 
+      radial distribution functions are, they give similar numbers of neighbors and hydrogen bonds. So the O&middot;&middot;&middot;O 
+      radial distribution function is a poor discriminator for these factors [<a  href="ref2.html#r199" title="go to cited reference" >199</a>] and certainly should not be used as the sole comparator for a model. The first oxygen peak of many models'  radial distribution functions rise too fast, go too high, and then fall too fast to the first minimum  
+    [<a  href="ref36.html#r3524" name="r3524" title="go to cited reference" id="r3524">3524</a>b]. </p>
+    <p align="left">&nbsp;</p>
+    <p align="left">The 
+      popular models <abbr title="Simple Point Charge">SPC</abbr>, <abbr title="Extended Simple Point Charge">SPC/E</abbr>, <abbr title="Transferable Intermolecular Potential with 3 Points">TIP3P,</abbr> and <abbr title="Transferable Intermolecular Potential with 4 Points">TIP4P</abbr> produce a poor agreement with water's melting point (giving 
+      melting points of 190 K, 215 K, 146 K, and 232 K respectively), 
+      and <abbr title="Simple Point Charge">SPC</abbr>, <abbr title="Extended Simple Point Charge">SPC/E</abbr>, <abbr title="Transferable Intermolecular Potential with 3 Points">TIP3P,</abbr> and <abbr title="Transferable Intermolecular Potential with 5 Points">TIP5P</abbr> do not give <a title="go to find more on structure"  href="hexagonal_ice.html">ice1h</a> as a stable phase, 
+      replacing it with <a title="go to find more on structure"  href="ice_ii.html">ice <span class="style1">II</span></a> [<a title="go to cited reference"  href="ref8.html#r775">775</a><a name="r775" id="r775"></a>] or <a href="http://www.openscience.org/&asymp; chrisfen/iceiJmol.html" title="opens new site in a pop-up window"   target="otherWin1" onclick="newWin('otherWin1')">improbable 
+      unrealistic crystal structures</a>. Many models mistakenly predict antiferroelectric character  for the ordered phases of ice (for example, <a href="ice_xi.html">ice XI</a>) [<a href="ref11.html#r1051">1051</a><a name="r1051" id="r1051"></a>]. The popular <abbr title="Extended Simple Point Charge">SPC/E</abbr>, <abbr title="Transferable Intermolecular Potential with 4 Points">TIP4P,</abbr> and<abbr title="Transferable Intermolecular Potential with 4 Points for use with Ewald techniques"> TIP4P-Ew</abbr> models also fail to predict correct critical data, vapor pressure, or second virial coefficients  [<a  href="ref13.html#r1235" name="r1235" title="go to cited reference" id="r1235">1235</a>]. The commonly used <abbr title="Extended Simple Point Charge">SPC/E</abbr> and <abbr title="Transferable Intermolecular Potential with 3 Points">TIP3P</abbr> models have been proven unreliable even in the liquid phase [<a href="ref18.html#r1706">1706</a><a name="r1706" id="r1706"></a>]. The SPC/E model should not be used at high pressure   [<a title="go to cited reference"  href="ref40.html#r3956">3956</a><a name="r3956" id="r3956"></a>]. Different models also 
+      give dissimilar lowest energy structures for small water 
+      clusters [<a  href="ref9.html#r857" name="r857" title="go to cited reference" id="r857">857</a>]. It 
+      is also true that models for liquid water, bearing little relationship 
+      to reality (for example, involving only two dimensions or 
+      8-molecule cubic arrangements), can be used to calculate similarly 
+      close results for a small number of water's properties. Most models do not account for the predominantly p<sub>z</sub><sup>2</sup> character of the highest 
+      occupied molecular orbital (HOMO; 1<em>b</em><sub>1</sub>), or consequently water's large quadrupole [<a title="go to cited reference"  href="ref18.html#r1731">1731</a><a name="r1731" id="r1731"></a> ]. Nonpolarizable models have been shown to be inherently unable to  simultaneously predict certain physical properties, such as melting temperature and the temperature of maximum density, whatever parameter values are chosen, due to the limited number of variable parameters [<a href="ref11.html#r1079">1079</a><a name="r1079" id="r1079"></a>, <a href="ref22.html#r2159">2159</a><a name="r2159" id="r2159"></a>, <a href="ref36.html#r3521">3521</a><a name="r3521" id="r3521"></a>].  It has been proposed that the model [<a title="go to cited reference"  href="ref28.html#r2722">2722</a>] represents the accuracy limit of rigid 3-point water models, but is still somewhat inaccurate. Nuclear quantum effects are rarely included explicitly but give rise to high proton swapping between neighboring water molecules plus strengthening of hydrogen bonds at low temperatures and their weakening at high temperatures [<a title="go to cited reference"  href="ref23.html#r2286">2286</a><a name="r2286" id="r2286"></a>]. None 
+      of 40 rigid, flexible, polarizable and <em>ab initio</em> models could simultaneously agree with both the 
+      experimental radial distribution model and the experimental 
+      internal energy [<a  href="ref3.html#r245" name="r245" title="go to cited reference" id="r245">245</a>]. 
+      Serious discrepancies concerning the first coordination shell 
+      hydrogen bonding, have been noted between the molecular dynamics 
+      simulations using these models and X-ray absorption spectroscopy 
+      [<a title="go to cited reference"  href="ref7.html#r613">613</a><a name="r613" id="r613"></a>]. The computational costs of these models have been compared [<a href="ref22.html#r2159">2159</a>]. A model that shows some agreement over the range of physical states of ice and water, including correctly reproducing the temperature dependence, if not the accurate values, of many structural, thermodynamic, and dynamical properties, is the <abbr title="Many Body with
+ polarization">MB-pol</abbr> many-body potential for water [<a title="go to cited reference"  href="ref32.html#r3133">3133</a><a name="r3133" id="r3133"></a>]. </p>
+    <p>&nbsp;</p>
+    <p align="left">Other 
+      modeling studies have failed to reproduce parts of water's 
+      vibrational spectrum even qualitatively [<a title="go to cited reference"  href="ref7.html#r696">696</a><a name="r696" id="r696"></a>]. 
+      Artifacts, such as unnatural phase transitions, may be unexpectedly produced in water simulations [<a href="ref11.html#r1056">1056</a><a name="r1056" id="r1056"></a>] or, worse, go unnoticed. An improved agreement may require many-body parameters [<a  href="ref3.html#r221" name="r221" title="go to cited reference" id="r221">221</a>, <a href="ref39.html#r3894">3894</a><a name="r3894" id="r3894"></a>] 
+      as three-body effects have been shown to contribute 14.5% 
+      (or more [<a title="go to cited reference"  href="ref8.html#r728">728</a><a name="r728" id="r728"></a>]) to the internal 
+      energy, and these cannot be adequately represented  by potentials 
+      that distort two-body effects [<a title="go to cited reference"  href="ref5.html#r465">465</a><a name="r465" id="r465"></a>]. Even good models are incapable of describing the situation in deeply supercooled water, with none (up until 2018) able to  reproduce the sharpness of the experimentally observed compressibility maximum [<a title="go to cited reference"  href="ref36.html#r3502">3502</a><a name="r3502" id="r3502"></a>]. The magnitude of experimental density fluctuations is severely underestimated in the simulations. However,a model (<abbr title="Gaussian Charge Polarizable Model">GCPM</abbr> ) using polarizable smeared charges, rather than the other 
+      models' point charges, has shown considerable promise 
+      [<a title="go to cited reference"  href="ref9.html#r859">859</a>]. Other  steps forward 
+      are the inclusion of quantization, which is shown to have significant 
+    consequences on water's structuring [<a title="go to cited reference"  href="ref9.html#r863">863</a><a name="r863" id="r863"></a>], and the need for high order multipole components [<a href="ref32.html#r3160">3160</a><a name="r3160" id="r3160"></a>], up to hexadecapole, to achieve the correct ferroelectric structures for the ordered ice phases [<a href="ref11.html#r1051">1051</a>]. A study attempting to combine diffraction, infrared and x-ray absorption data, concluded that  current water models show poor  fit [<a href="ref12.html#r1159">1159</a><a name="r1159" id="r1159"></a>]. It is also clear that care must be taken when combining quantum chemical modeling (involving a small number of molecules) with a larger scale, but computationally cheaper, empirical models as some, well-parameterized models (such as TIP5P) may be unsuitable for mixed simulations  [<a title="go to cited reference" href="ref17.html#r1643" name="r1643" id="r1643">1643</a>]. The best water models for  liquid water have a charge distribution with a large dipole, a large quadrupole, and a negative charge out of the molecular plane to give  symmetrically ordered tetrahedral hydration  [<a href="ref25.html#r2418">2418</a><a name="r2418" id="r2418"></a>]. There may be a&nbsp;fundamental flaw in all these modeling studies (except <em>ab initio</em>) as different parameters are required for different purposes. Thus, optimal parametric values used to describe the potential energy surface are not necessarily the best to describe the dipole moment surface or the polarizability surface, which will be particularly relevant when modeling  water in the presence of electric fields  [<a href="ref24.html#r2340">2340</a><a name="r2340" id="r7"></a>]. Altogether, it is clear that despite water appearing to be a very simple molecule, it remains challenging to model realistically, probably because it does not consist of totally independent molecules held together by weak electrostatic bonds (as modeled) but in 'flickering' clusters and microdomains. One of the areas most studied, due to the practical difficulties, is within supercooled water. Unfortunately, this area is not well modeled  [<a href="ref41.html#r4053">4053</a><a name="r4053" id="r4053"></a>]. At present, the best nonpolarizable model appears to be the  point-charge model <abbr title="Optimized point charge">&nbsp;OPC</abbr> [<a title="go to cited reference"  href="ref22.html#r2168">2168</a>], and the best polarizable models are <abbr title="inexpensive Atomic
+Multipole Optimized Energetics for Biomolecular Applications)">iAMOEBA</abbr><a title="go to cited reference"  href="ref21.html#r2031"> [2031]</a> and <abbr title="Baranyai Kiss">BK3</abbr> <a title="go to cited reference"  href="ref21.html#r2080">[2080]</a>, which both seem to show good promise. Improvements to existing models and novel optimization methods are being developed [<a href="ref23.html#r2299">2299</a><a name="r2299" id="r2299"></a>].  A promising polarizable force field for water (RexPoN) has been developed based solely on quantum mechanics calculations with no empirical data [<a  href="ref36.html#r3524" title="go to cited reference" >3524</a>]. Each atom has an electronic core and a responding shell, and the water structure contains multi-branched polymer chains. A many-body polarized (MB-pol) potential has  emerged (2016) as a versatile molecular model for water simulations from the gas to the condensed phase, and captures significant aspects of liquid water&rsquo;s behavior over a range of temperatures  from the boiling point to deeply supercooled conditions at atmospheric pressure [<a href="ref42.html#r4130">4130</a><a name="r4130" id="r4130"></a>, <a href="ref43.html#r4224">4224</a><a name="r4224" id="r9"></a>]. The lack of success of otherwise successful models within the supercooled regime has been used  to support  the<a href="supercooled_water.html"> 'two kinds of water'</a> and <a href="water_anomalies.html#ration">liquid-liquid critical point </a>hypotheses [<a href="ref43.html#r4228">4228</a><a name="r4228" id="r4228"></a>].</p>
+    <p>&nbsp;</p>
+    <p align="left"> Some models have been developed to give particular physical properties. For example, the TIP4P/2005 model was developed to reproduces the maximum density at T = 4&nbsp;&deg;C, whereas for  TIP4P/&#1013;, the model not only reproduces this density but also the dielectric constant at T = 4&nbsp;&deg;C. The density and diffusion anomalies for the TIP4P/2005 and TIP4P/&#1013; models have been determined  [<a href="ref34.html#r3344">3344</a><a name="r3344" id="r3344"></a>]. Other properties of these models are not as well predicted. Artificial intelligence and machine learning have been used to optimize water models using a selection of water's properties  [<a title="go to cited reference"  href="ref44.html#r4345">4345</a><a name="r4345" id="r4345"></a>]. Such methods work well for the properties chosen but less well for other properties. The poor prediction (of known parameters) of these models should be taken into account when such models are used to predict unknown parameters or processes [<a title="go to cited reference" href="ref29.html#r2887">2887</a><a name="r2887" id="r2887"></a>]. This may be the cause of their failure to describe the experimentally suggested <a href="cluster_history.html#outer">two-state 
+    mixture model</a>. This has been attributed to the underlying potential energy surface on which the simulations move being insufficiently corrugated, leading to an averaged structure rather than a mixture of two families of structures [<a title="go to cited reference"  href="ref22.html#r2189">2189</a><a name="r2189" id="r2189"></a>, <a title="go to cited reference" href="ref37.html#r3607">3607</a><a name="r3607" id="r3607"></a>].<sup><a href="#gg" name="bgg" id="bgg">a</a></sup> It has been claimed that models generated for use within a zero electric field may fail when an electric field is present [<a href="ref24.html#r2340">2340</a>].</p>
+    <p>&nbsp;</p>
+    <p align="left">In the light of these observations, it is unsurprising 
+      that contemporary water models are relatively poor predictors for 
+      the conformation and hydration of biological molecules in 
+      solution (for example, [<a title="go to cited reference"  href="ref6.html#r596">596</a><a name="r596" id="r596"></a>, <a title="go to cited reference"  href="ref23.html#r2279">2279</a><a name="r2279" id="r2279"></a>]), 
+      and it may be helpful to develop water models specifically 
+      for use with biomolecular solvation. The Franzese-Stanley model (FS) for hydration water coarse-grains the configurations of water molecules and describes the water hydrogen bonding using two terms, accounting for (i) the directional and (ii) the cooperative components of the hydrogen bond interaction. Interestingly, the FS coarse-grained model  predicts the <a href="cluster_history.html">two-state  phase transition</a>  in  supercooled water and the liquid-liquid critical point. [<a title="go to cited reference"  href="ref40.html#r3979">3979</a>]</p>
+    <h2><a name="salt" id="solution"></a>Aqueous solutions</h2>
+    <p align="left">Although aqueous electrolytes are possibly the simplest of solutions, it has been proven difficult to model them well  [<a href="ref26.html#r2502">2502</a><a name="r2502" id="r2502"></a>]. Perhaps this is  expected due to the problems involved in modeling pure water (see above).</p>
+    <p align="right"> [<a title="go to top of page" href="#top"><span class="style16">Back to Top&nbsp;</span><img src="images/rtup.gif" border="0" alt="to top of page" width="13" height="12" /></a>] </p>
+    <hr />
+    <h2>Footnotes</h2>
+    <p><a name="af" id="af"><sup>a</sup></a> <strong>The Lennard-Jones relationship</strong>. The Lennard-Jones relationship  [<a title="go to cited reference"  href="ref39.html#r3808">3808</a><a name="r3808" id="r3808"></a>] is a useful isotropic approximation for the  energy of the non-bonding interaction between atoms or molecules. Note, however, that water is 
+      not a spherically symmetrical molecule as judged by the variation 
+      in the <a title="go to 'Water molecular structure' page"  href="water_molecule.html#vdw">van der Waals radii</a> [<a title="go to cited reference"  href="ref3.html#r206">206</a>]. Also, in these models, the 
+      Lennard-Jones interaction exerts a repulsive effect on hydrogen 
+      bonding, whereas some report that it is attractive [<a title="go to cited reference"  href="ref6.html#r548">548</a><a name="r548" id="r548"></a>] 
+      even at this close contact. Also, in use, its effective distance is often truncated. The Lennard-Jones potential is 
+      made up of a twelfth power repulsive term and a sixth power 
+      attractive term (<em>r<sub>ij</sub> </em>= distance apart of the i<sup>th</sup> and j<sup>th</sup> atoms, with &sigma; and &epsilon; defined below):</p>
+    <p align="center"><img src="images/ljeq.gif"  alt="The Lennard-Jones potential = 4 x epsilon x )(sigma over separation)^12 - (sigma over separation)^6 )" title ="The Lennard-Jones potential = 4 x epsilon x )(sigma over separation)^12 - (sigma over separation)^6 )" width="180" height="69" /></p>
+    <p align="left">Sometimes, this is written</p>
+    <p align="center"><img src="images/ljeq2.gif"  width="106" height="48" title="The Lennard-Jones potential = A over separation^12 - B over separation^6" alt="The Lennard-Jones potential = A over separation^12 - B over separation^6" /></p>
+    <p align="center">where &nbsp;&nbsp;<em>A</em>=4&epsilon;&sigma;<sup>12</sup>, <em>B</em>=4&epsilon;&sigma;<sup>6</sup>, <img src="images/ljeq3.gif" alt="sigma=sixth root of A/B" title="sigma=sixth root of A/B" width="56" height="60" align="absmiddle" /> &nbsp;&nbsp;and &nbsp;&nbsp;<img src="images/ljeq4.gif" alt="epsilon=B squared over 4A"  title="epsilon=B squared over 4A" width="49" height="42" align="middle" /></p>
+    <p align="left">It is likely that the repulsive term is too repulsive, and in reality, the repulsion is somewhat softer, allowing somewhat easier close molecular contact [<a title="go to cited reference"  href="ref13.html#r1245">1245</a><a name="r1245" id="r1245"></a>]. </p>
+    <p>&nbsp;</p>
+    <figure  class="floatright">
+<figcaption>
+      <p align="center">Lennard-Jones potential for the SPC/E model</p>
+      <p align="center">&nbsp;</p>
+</figcaption>
+<img class="floatright" src="images/lennard_jones.gif"  title="Lennard-Jones potential for the SPC/E model" alt="Lennard-Jones potential for the SPC/E model" width="320" height="195" /></figure>
+    <p align="left">The Lennard-Jones potential 
+      for the <abbr title="Extended Simple Point Charge">SPC/E</abbr> model (solid <span class="style7">red</span> line) is shown right. The &sigma; parameter gives the molecular separation for zero interaction 
+      energy. The minimum energy (-&epsilon;) 
+      lies 12.25 % further at &sigma; x 2<sup>1/6</sup> <a href="constants.html#ang" title="Angstrom">&Aring;</a>. &epsilon;&nbsp;is the energy-well depth and a measure of how strongly the two particles attract each other.</p>
+    <p>&nbsp;</p>
+    <p>Also shown (dotted <span class="style8">blue</span> line) is an equivalent Buckingham potential (&sigma; 3.55 <a href="constants.html#ang" title="Angstrom">&Aring;</a>, <abbr title="Lennard-Jones energy">&epsilon;</abbr> 0.65 kJ  &#739; mol<sup>&minus;1</sup>, &gamma; 12.75); the &sigma; parameter in 
+      the Buckingham potential gives the &sigma; x 2<sup>1/6</sup> position in the Lennard-Jones potential.</p>
+    <p align="center">&nbsp;<img src="images/buck.gif" alt="Buckingham potential" title="Buckingham potential" width="284" height="70" /><a title="go to cited reference"  href="ref9.html#r859">&nbsp;&nbsp;&nbsp;&nbsp;[859] </a>[<a title="click for an explanation" href="#abb"><span title="go back to the text">Back</span></a>]</p>
+    <p>&nbsp;</p>
+    <p align="left"><a name="bf" id="bf"><sup>b</sup></a> Models may be 
+      checked for agreement with gas-phase clusters (for example, water dimers) before use in liquid water simulations.  However, such 
+      compliance should not be a necessary prerequisite 
+      for accurate liquid water predictions as they tend to be biased towards internal hydrogen bond maximization, and surface unconnected ('dangling') hydrogen-bonding capability minimization, due to their relatively large surface area. Thus, they are not representative of real bulk liquid water structuring. [<a title="click for an explanation" href="#bbb"><span title="go back to the text">Back</span></a>]</p>
+    <p>&nbsp;</p>
+    <p align="left"><a name="cf" id="cf"><sup>c</sup></a> Molecular polarization 
+      may be electronic (caused by the redistribution of its electrons), 
+      geometric (caused by changes in the bond lengths and angles), 
+      or orientational (caused by the rotation of the whole 
+      molecule) [<a title="go to cited reference"  href="ref9.html#r867">867</a>]. Polarization is an effective way to include many-body effects. This paper [<a title="go to cited reference"  href="ref9.html#r867">867</a>] 
+      describes Charge-On-Spring polarizable force fields (for example, <abbr title="Charge-On-Spring, Gas-phase values">COS/G3</abbr>) 
+      as most suitable for aqueous solutions of proteins (although such <abbr title="Charge-On-Spring">COS</abbr> models are very poor on physical properties such as freezing point  [<a title="go to cited reference"  href="ref20.html#r1952">1952</a><a name="r1952" id="r1952"></a>]). Alternatively, 
+      a model possessing out-of-plane polarization and fluctuating 
+      charges (<abbr title="Polarizable five-site, fitted using the aug-cc-pVTZ basis set">POL5/TZ</abbr>) 
+      is proposed best for comparison with experimental vibrational 
+      data [<a title="go to cited reference"  href="ref9.html#r878">878</a><a name="r878" id="r878"></a>]. 
+      [<a title="click for an explanation" href="#cbb"><span title="go back to the text">Back</span></a>]</p>
+    <p>&nbsp;</p>
+    <p align="left"><a name="df" id="df"><sup>d</sup></a> One model describes 
+      the water molecule solely in terms of dipoles and polarizabilities 
+      on the atoms and a quadrupole on the oxygen atom [<a  href="ref8.html#r736" name="r736" title="go to cited reference" id="r736">736</a>]. 
+      [<a title="click for an explanation" href="#dbb"><span title="go back to the text">Back</span></a>]</p>
+    <p>&nbsp;</p>
+    <p align="left"><a name="ef" id="ef"><sup>e</sup></a> As well as the charge (<strong>q</strong>) and dipole (<strong>&mu;</strong>), it may be that the quadrupole (<strong>&Theta;</strong>), octupole (<strong>&Omega;</strong>), and hexadecapole <span class="style1">(<strong>H</strong></span>) interactions are also very important [<a  href="ref13.html#r1228" name="r1228" title="go to cited reference" id="r1228">1228</a>]. The interactions of these multipoles are <strong>q<sub>1</sub></strong><abbr title = "International Assosiation for the Properties of Water and Steam">&#739;</abbr> <strong>q<sub>2</sub></strong>/r, <strong>q<sub>1</sub></strong><abbr title = "International Assosiation for the Properties of Water and Steam">&#739; </abbr><strong>&mu;</strong><sub>2</sub>/r<sup>2</sup>, <strong>q<sub>1</sub></strong><abbr title = "International Assosiation for the Properties of Water and Steam">&#739;<strong> &Theta;</strong></abbr><strong><sub>2</sub></strong>/r<sup>3</sup>, <strong>q</strong><abbr title = "International Assosiation for the Properties of Water and Steam"><strong><sub>1</sub></strong>&#739;<strong> &Omega;</strong></abbr><strong><sub>2</sub></strong>/r<sup>4</sup>,<strong> q</strong><abbr title = "International Assosiation for the Properties of Water and Steam"><strong><sub>1</sub></strong>&#739;<span class="style1"> <strong>H</strong></span></abbr><strong><sub>2</sub></strong>/r<sup>5</sup>,<strong> &mu;<sub>1</sub></strong><abbr title = "International Assosiation for the Properties of Water and Steam">&#739; </abbr><strong>&mu;</strong><strong><sub>2</sub></strong>/r<sup>3</sup>,<strong> &mu;<sub>1</sub></strong><abbr title = "International Assosiation for the Properties of Water and Steam">&#739; </abbr><strong>&Theta;</strong><strong><sub>2</sub></strong>/r<sup>4</sup>, <strong>&mu;<sub>1</sub></strong><abbr title = "International Assosiation for the Properties of Water and Steam">&#739; </abbr><strong>&Omega;</strong><strong><sub>2</sub></strong>/r<sup>5</sup>, <strong><abbr title = "International Assosiation for the Properties of Water and Steam">&Theta;</abbr><sub>1</sub></strong><abbr title = "International Assosiation for the Properties of Water and Steam">&#739; </abbr><strong>&Theta;</strong><strong><sub>2</sub></strong>/r<sup>5</sup>, etc., so lessening in importance with distance (r) [<a  href="ref28.html#r2775" name="r2775" title="go to cited reference" id="r2775">2775</a>]. These multipole moments of the models are generally far lower than the calculated values for liquid water.</p>
+    <p>&nbsp;</p>
+    <table border="1" cellspacing="0" width="99%" cellpadding="0"  summary="Calculated multipole moments for some water models">
+      <caption>
+      <strong class="style15">Calculated multipole moments for some water models</strong>
+      <br />
+      <br />
+      </caption>
+      <tr>
+        <th scope="col" width="10%" rowspan="2"><div align="center"><strong>Model</strong></div></th>
+        <td colspan="3"><div align="center"><strong>Quadrupole moments</strong><sup><a href="#r1">1</a></sup> </div></td>
+        <td colspan="3"><div align="center"><strong>Octupole moments</strong><sup><a href="#r2">2</a></sup></div></td>
+</tr>
+      <tr>
+        <th scope="col" width="15%"><div align="center"><strong>&Theta;</strong><sub>xx</sub>, <a href="constants.html#debye">D</a> <a href="constants.html#ang" title="Angstrom">&Aring;</a></div></th>
+        <th scope="col" width="15%"><div align="center"><strong>&Theta;</strong><sub>yy</sub>, <a href="constants.html#debye">D</a> <a href="constants.html#ang" title="Angstrom">&Aring;</a></div></th>
+        <th scope="col" width="15%"><div align="center"><strong>&Theta;</strong><sub>zz</sub>, <a href="constants.html#debye">D</a><a href="constants.html#ang" title="Angstrom">&Aring;</a></div></th>
+        <th scope="col" width="15%"><div align="center"><strong>&Omega;</strong><sub>xxz</sub>, <a href="constants.html#debye">D</a> <a href="constants.html#ang" title="Angstrom">&Aring;</a><sup>2</sup></div></th>
+        <th scope="col" width="15%"><div align="center"><strong>&Omega;</strong><sub>yyz</sub>, <a href="constants.html#debye">D</a> <a href="constants.html#ang" title="Angstrom">&Aring;</a><sup>2</sup></div></th>
+        <th scope="col" width="15%"><div align="center"><strong>&Omega;</strong><sub>zzz</sub>, <a href="constants.html#debye">D</a> <a href="constants.html#ang" title="Angstrom">&Aring;</a><sup>2</sup></div></th>
+</tr>
+      <tr>
+        <th scope="row"><abbr title="Extended Simple Point Charge">SPC/E</abbr></th>
+        <td><div align="center">-2.71</div></td>
+        <td><div align="center">0.00</div></td>
+        <td><div align="center">-1.36</div></td>
+        <td><div align="center">-1.39</div></td>
+        <td><div align="center">0.00</div></td>
+        <td><div align="center">-0.55</div></td>
+</tr>
+      <tr>
+        <th scope="row"><abbr title="Transferable Intermolecular Potential with 3 Points">TIP3P</abbr></th>
+        <td><div align="center">-2.30</div></td>
+        <td><div align="center">0.00</div></td>
+        <td><div align="center">-1.38</div></td>
+        <td><div align="center">-1.19</div></td>
+        <td><div align="center">0.00</div></td>
+        <td><div align="center">-0.57</div></td>
+</tr>
+      <tr>
+        <th scope="row"><abbr title="Transferable Intermolecular Potential with 4 Points">TIP4P</abbr></th>
+        <td><div align="center">-2.86</div></td>
+        <td><div align="center">0.00</div></td>
+        <td><div align="center">-1.60</div></td>
+        <td><div align="center">-1.49</div></td>
+        <td><div align="center">0.00</div></td>
+        <td><div align="center">-0.70</div></td>
+</tr>
+      <tr>
+        <th scope="row"><abbr title="Transferable Intermolecular Potential with 5 Points">TIP5P</abbr></th>
+        <td><div align="center">-1.33</div></td>
+        <td><div align="center">0.76</div></td>
+        <td><div align="center">-0.42</div></td>
+        <td><div align="center">-0.69</div></td>
+        <td><div align="center">-0.09</div></td>
+        <td><div align="center">-0.57</div></td>
+</tr>
+      <tr>
+        <th scope="row">Other</th>
+        <td><div align="center">-4.27 [<a title="go to cited reference"  href="ref5.html#r453">453</a><a name="r453" id="r453"></a>]</div></td>
+        <td><div align="center">-7.99 [<a title="go to cited reference"  href="ref5.html#r453">453</a>]</div></td>
+        <td><div align="center">-5.94 [<a title="go to cited reference"  href="ref5.html#r453">453</a>]</div></td>
+        <td><div align="center">-1.754 [<a title="go to cited reference"  href="ref5.html#r452">452</a><a name="r452" id="r452"></a>]</div></td>
+        <td><div align="center">-0.554 [<a title="go to cited reference"  href="ref5.html#r452">452</a>]</div></td>
+        <td><div align="center">-1.981 [<a title="go to cited reference"  href="ref5.html#r452">452</a>]</div></td>
+</tr>
+</table>
+    <div style="width:90%; padding-left:5%; padding-right:5%;">
+      <p align="left" class="style3"><sup>1<a name="r1" id="r1"></a></sup> Directions as given <a href="water_properties.html#x">elsewhere</a>, zero position at the oxygen atom; <strong>&Theta;</strong><sub>xx</sub>= &Sigma;<sub>i</sub> c<sub>i</sub>x<sub>i</sub><sup>2</sup> where c = charge, x = distance in x-direction and the summation is over all (i) charges. </p>
+      <p align="left" class="style3"> <sup>2<a name="r2" id="r2"></a></sup> Directions as given <a href="water_properties.html#x">elsewhere</a>, zero position at the center of mass; <strong>&Omega;</strong><sub>xxz</sub>= &Sigma;<sub>i</sub> c<sub>i</sub>x<sub>i</sub><sup>2</sup>z<sub>i</sub> where c = charge, x and z = distance in x- and z-directions and the summation is over all (i) charges.  [<a title="click for an explanation" href="#ebb"><span title="go back to the text">Back</span></a>] </p>
+</div>
+    <p align="left" class="style3">&nbsp;</p>
+    <p><a name="ff" id="ff"><sup>f</sup></a> As an example, the <abbr title="Transferable Intermolecular Potential with 3 Points">TIP3P</abbr> model of n atoms makes use of the following equation </p>
+    <p>&nbsp;  </p>
+    <p align="center"><img src="images/tip3peq.gif" alt="Potential = the sum over all atomic interactions of K X the atomic charges multiplied, divided by their separation and plus 4 x epsilon x )(sigma over separation)^12 - (sigma over separation)^6 )&quot; alt=&quot;The Lennard-Jones potential = 4 x epsilon x )(sigma over separation)^12 - (sigma over separation)^6 )" title="Potential = the sum over all atomic interactions of K X the atomic charges multiplied, divided by their separation and plus 4 x epsilon x )(sigma over separation)^12 - (sigma over separation)^6 )&quot; alt=&quot;The Lennard-Jones potential = 4 x epsilon x )(sigma over separation)^12 - (sigma over separation)^6 )" width="314" height="53" /></p>
+    <p align="left">where <em>k<sub>e</sub></em> is the <a href="constants.html#electrostat">electrostatic constant</a>, <em>r<sub>ij</sub></em>= distance apart of the i<sup>th</sup> and j<sup>th</sup> atoms, with &sigma; and &epsilon; defined above. 
+      [<a title="click for an explanation" href="#bff"><span title="go back to the text">Back</span></a>]</p>
+    <p>&nbsp;</p>
+    <p align="left"><a name="gg" id="gg"><sup>g</sup></a> An 'averaged' structure may not exist at all. Consider an 'average' person; neither man nor woman. 
+      [<a title="click for an explanation" href="#bgg"><span title="go back to the text">Back</span></a>]</p>
+    <!-- print end -->
+    <div class="spacer">
+      <p>&nbsp;</p>
+</div>
+</div>
+</div>
+<div style="width:761px; background-color:#006868;padding-top:0px;padding-bottom:3px;border:0px;margin:0px;">
+  <div style="width:753px; background-image:url('images/bg2.gif');margin-left:3px;padding-left:2px;border:0px;padding-top:0px;padding-bottom:0px;background-color:#D8F0d8;">
+    <p>&nbsp;</p>
+    <p align="center"><span class="style3"><a title="Home page" href="index.html">Home</a> | <a title="go to our 'Site index'" href="water_structure_science.html" accesskey="I">Site Index</a> | <a title="go to 'Water clusters' page"  href="icosahedral_water_clusters.html">Icosahedral water clusters</a> | <a title="go to 'Evidence for water clusters' page"  href="cluster_evidence.html">The evidence</a> | <a href="http://www.lsbu.ac.uk/" ><abbr title="London South Bank University">LSBU</abbr></a> | <a title="go to top of page" href="#top">Top</a></span></p>
+    <p>&nbsp;</p>
+    <p align="center"><span class="style3">This page was established in 2001 and  last updated 
+        by <a title="email me" href="mailto:martin.chaplin@btinternet.com?subject=from_water_web_site">Martin Chaplin</a> on
+        <!-- #BeginDate format:Sw1 -->1 June, 2022<!-- #EndDate -->
+</span></p>
+    <br />
+    <div class="floatleft" style="width:320px;">
+      <div align="right"><a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/2.0/uk/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nc-nd/2.0/uk/88x31.png" /></a></div>
+</div>
+   <span class="style4">This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/2.0/uk/">Creative Commons Attribution<br />
+    -Noncommercial-No Derivative Works 2.0 UK: England &amp; Wales License</a></span>
+    <p>&nbsp;</p>
+
+    <div class="spacer"></div>
+</div>
+</div>
+</body>
+</html>
