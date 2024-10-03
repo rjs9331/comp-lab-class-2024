@@ -1,0 +1,1 @@
+Setup shows how I calibrated my mdp settings to get specific data points within range to be later plot and compared. Additionally, calculating energy minimzations and average speed at 10ps were calculated. Additionally, my sbatch slurm is shown so it can be seen how I set up my batch job to meet the specifc times in the instructions.
