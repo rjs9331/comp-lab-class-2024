@@ -1,1 +1,1 @@
-After I inputted my data from following the steps in the tutorials (which is in input folder) I was able to get trajectory coordinates for my protein. As a result, I used jupyter to show patterns of these trajectories. 
+After I inputted my data from following the steps in the tutorials (which is in input folder) I was able to get trajectory coordinates for my protein. As a result, I used jupyter to show patterns of these trajectories. I found the crystal and other condition had similar peaks and trajectories. 
