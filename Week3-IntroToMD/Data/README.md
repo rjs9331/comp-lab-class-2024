@@ -1,0 +1,1 @@
+After I got my protein processed following the tutorial I removed all water surrounding the protein and saved this data. Afterwards, I followed more gromacs commands to calculate RMSD to find the 10ns trajectory points. Later I used rms command to be able to gather and plot these points. 
