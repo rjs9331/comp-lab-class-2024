@@ -1,0 +1,1 @@
+After following the gromacs commands on the tutorials I was able to save my data points and trajectories as xtc files. I went onto jupitor and use python packages like matplotlib and numpy to be able to plot these data. All of them were plotted and compared with the Eqilibration points to prove a stable box for our protein.
