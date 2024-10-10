@@ -1,0 +1,40 @@
+# Parallel Tempering Simulation Setup
+
+## 1. Created directories for each temperature:
+- T300 (300K)
+- T400 (363K)
+- T600 (440K)
+
+Commands used:
+```bash
+mkdir T300 T400 T600
+cp adp.tpr T300/
+cp adp.tpr T400/
+cp adp.tpr T600/
+
+#Change to 300K
+gmx_mpi grompp -f adp.mdp -c conf.gro -p topol.top -o T300/adp.tpr -maxwarn 1 -r conf.gro -n index.ndx -temperature 300
+#Change to 363K
+gmx_mpi grompp -f adp.mdp -c conf.gro -p topol.top -o T400/adp.tpr -maxwarn 1 -r conf.gro -n index.ndx -temperature 363
+#Change to 440K
+gmx_mpi grompp -f adp.mdp -c conf.gro -p topol.top -o T600/adp.tpr -maxwarn 1 -r conf.gro -n index.ndx -temperature 440
+
+
+### 3. Request an Interactive Node
+
+#To request an interactive node with 3 tasks-per-node and 1 CPU per task:
+
+```bash
+srun --nodes=1 --ntasks-per-node=3 --cpus-per-task=1 --time=04:00:00 --partition=interactive --pty bash
+
+#Run the Parallel Temerping Simulation
+mpirun -np 3 gmx_mpi mdrun -s adp -multidir T300/ T400/ T600/ -deffnm adp_exchange3temps -replex 500
+
+#Check log files
+less T300/md.log
+less T400/md.log
+less T600/md.log
+
+#Search for lines like:
+Replica exchange at step X  (time X ps)
+Accepted exchanges:  X / Y
