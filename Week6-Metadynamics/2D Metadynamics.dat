@@ -1,0 +1,14 @@
+# vim:ft=plumed
+MOLINFO STRUCTURE=dialA.pdb 
+
+# Compute the backbone dihedral angle phi, defined by atoms C-N-CA-C
+phi: TORSION ATOMS=5,7,9,15
+
+# Compute the backbone dihedral angle psi, defined by atoms N-CA-C-N
+psi: TORSION ATOMS=7,9,15,17
+
+# Activate well-tempered metadynamics in phi and psi
+metad: METAD ARG=phi,psi PACE=500 HEIGHT=1.2 BIASFACTOR=10 SIGMA=sigma_phi,sigma_psi FILE=HILLS GRID_MIN=-pi GRID_MAX=pi GRID_WFILE=2d Meta.grid.dat GRID_WSTRIDE=10000
+
+# Print both collective variables and the value of the bias potential on COLVAR file
+PRINT STRIDE=10 ARG=phi,psi,metad.bias FILE=COLVAR
