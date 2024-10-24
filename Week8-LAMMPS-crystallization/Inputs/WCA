@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Create directories for saving results
+mkdir -p Trajectories Data
+
+# Loop over densities from 0.5 to 1.1 in increments of 0.1
+for density in $(seq 0.5 0.1 1.1)
+do
+    # Update the input file for the current density
+    # Assuming you have a placeholder in the in.melt file (e.g., "DENSITY_PLACEHOLDER")
+    sed "s/DENSITY_PLACEHOLDER/$density/g" in.melt.template > in.melt
+    
+    # Run the simulation and save the log file
+    mpirun lmp -in in.melt -log "Data/log_${density}.log"
+    
+    # Move the trajectory file
+    mv dump.melt "Trajectories/dump_${density}.melt"
+    
+    echo "Simulation completed for density: $density"
+done
